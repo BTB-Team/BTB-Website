@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./src/assets/logo/BTB-logo.svg" type="image/x-icon">
+    <title>BTB — Products</title>
+
+    <!-- icons -->
+     <link rel="stylesheet" href="./src/fontawesome/css/all.min.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      Linking Order — per project_principles:
+      1. main.css   → global vars, reset, reusable components
+      2. products.css → page-specific styles only
+    -->
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/products.css" />
+  </head>
+
+  <body>
+
+    <!-- ══════════════════════════════════════
+         BACKGROUND — Stars canvas + Glow orbs
+    ══════════════════════════════════════ -->
+    <canvas id="starsCanvas" aria-hidden="true"></canvas>
+
+    <div class="bg-glows" aria-hidden="true">
+      <span class="bg-glows__orb bg-glows__orb--purple"></span>
+      <span class="bg-glows__orb bg-glows__orb--blue"></span>
+      <span class="bg-glows__orb bg-glows__orb--center"></span>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         NAVBAR
+    ══════════════════════════════════════ -->
+    <header class="navbar">
+      <nav class="container">
+        <div class="navbar__inner">
+
+          <a href="index.html" class="navbar__logo" aria-label="BTB Home"><img src="./src/assets/logo/BTB-logo.svg" alt=""></a>
+
+          <ul class="navbar__links" id="navLinks" role="list">
+            <li><a href="index.html"     class="navbar__link">Home</a></li>
+            <li><a href="services.html"  class="navbar__link">Services</a></li>
+            <li><a href="products.html"  class="navbar__link navbar__link--active" aria-current="page">Products</a></li>
+            <li><a href="portfolio.html" class="navbar__link">Portfolio</a></li>
+            <li><a href="about.html"     class="navbar__link">About</a></li>
+            <li><a href="contact.html"   class="navbar__link">Contact</a></li>
+          </ul>
+
+          <div class="navbar__actions">
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Toggle light/dark theme"
+            ><i class="fa-regular fa-sun"></i></button>
+
+            <a href="contact.html" class="btn btn--sm">Get Started</a>
+
+            <button
+              class="navbar__hamburger"
+              id="hamburger"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks"
+            ><i class="fa-solid fa-plus-minus"></i></button>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- ══════════════════════════════════════
+         MAIN
+    ══════════════════════════════════════ -->
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="products-hero container" aria-labelledby="hero-heading">
+        <span class="products-hero__badge hero-anim-1">✦ Our Products</span>
+
+        <h1 class="products-hero__title hero-anim-2" id="hero-heading">
+          Smart Tools Built for a<br />
+          <span class="gradient-text">Smarter World</span>
+        </h1>
+
+        <p class="products-hero__sub hero-anim-3">
+          From AI-powered security to education and fitness management —<br />
+          BTB builds software that solves real problems.
+        </p>
+
+        <div
+          class="products-filter hero-anim-4"
+          role="group"
+          aria-label="Filter products by category"
+        >
+          <button class="products-filter__btn products-filter__btn--active" data-filter="all">All Products</button>
+          <button class="products-filter__btn" data-filter="database">Databases</button>
+          <button class="products-filter__btn" data-filter="management">Management</button>
+          <button class="products-filter__btn" data-filter="ai">AI</button>
+        </div>
+      </section>
+
+
+      <!-- Products list -->
+      <section class="container" aria-label="BTB Products">
+        <ul class="products-list" id="productsGrid" role="list">
+
+          <!-- ① YardGuard — image LEFT, text RIGHT -->
+          <li class="product-row" data-category="ai" role="listitem">
+            <div class="product-row__visual anim-scale">
+              <div class="product-row__visual-bg" style="background:linear-gradient(135deg,#0e1a38 0%,#1a0a38 50%,#0a0e28 100%);"></div>
+              <span class="product-row__deco product-row__deco--1"></span>
+              <span class="product-row__deco product-row__deco--2"></span>
+              <span class="product-row__deco product-row__deco--3"></span>
+              <span class="product-row__emoji" aria-hidden="true"><img src="./src/assets/images/app-tracker.jpg" alt=""></span>
+              <span class="product-row__visual-badge">New Release</span>
+            </div>
+            <div class="product-row__content">
+              <p class="product-row__category anim-right delay-1" style="color:var(--secondary);">AI · Security</p>
+              <h2 class="product-row__title anim-right delay-2">YardGuard — AI Thief Detection System</h2>
+              <p class="product-row__desc anim-right delay-3">
+                An AI-powered surveillance app that detects intruders inside yards in real time.
+                Computer vision identifies suspicious behavior, triggers instant alerts, and logs
+                incidents automatically — no manual monitoring needed.
+              </p>
+              <ul class="product-row__tags anim-right delay-4" aria-label="Tags">
+                <li class="product-row__tag">Computer Vision</li>
+                <li class="product-row__tag">Real-Time Alerts</li>
+                <li class="product-row__tag">AI-Powered</li>
+                <li class="product-row__tag">Security</li>
+              </ul>
+              <div class="product-row__actions anim-right delay-5">
+                <span class="product-row__status product-row__status--new">Available Now</span>
+                <a href="contact.html" class="product-row__link">
+                  Learn More
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- ② EduBase — image RIGHT, text LEFT -->
+          <li class="product-row product-row--reverse" data-category="database" role="listitem">
+            <div class="product-row__visual anim-scale">
+              <div class="product-row__visual-bg" style="background:linear-gradient(135deg,#0a1a38 0%,#0e2050 50%,#081428 100%);"></div>
+              <span class="product-row__deco product-row__deco--1"></span>
+              <span class="product-row__deco product-row__deco--2"></span>
+              <span class="product-row__deco product-row__deco--3"></span>
+              <span class="product-row__emoji" aria-hidden="true"><img src="./src/assets/images/OIP.webp" alt="educational database"></span>
+              <span class="product-row__visual-badge">Database</span>
+            </div>
+            <div class="product-row__content">
+              <p class="product-row__category anim-left delay-1" style="color:var(--primary);">Education</p>
+              <h2 class="product-row__title anim-left delay-2">EduBase — School Management Database</h2>
+              <p class="product-row__desc anim-left delay-3">
+                A structured database system for schools to manage student records, staff information,
+                academic schedules, grades, and institutional data — secure, fast, and easy to use.
+              </p>
+              <ul class="product-row__tags anim-left delay-4" aria-label="Tags">
+                <li class="product-row__tag">Students</li>
+                <li class="product-row__tag">Staff</li>
+                <li class="product-row__tag">Schedules</li>
+                <li class="product-row__tag">Grades</li>
+              </ul>
+              <div class="product-row__actions anim-left delay-5">
+                <span class="product-row__status product-row__status--new">Available</span>
+                <a href="contact.html" class="product-row__link">
+                  Explore
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- ③ FitBase — image LEFT, text RIGHT -->
+          <li class="product-row" data-category="database" role="listitem">
+            <div class="product-row__visual anim-scale">
+              <div class="product-row__visual-bg" style="background:linear-gradient(135deg,#180a38 0%,#2a0e50 50%,#100828 100%);"></div>
+              <span class="product-row__deco product-row__deco--1"></span>
+              <span class="product-row__deco product-row__deco--2"></span>
+              <span class="product-row__deco product-row__deco--3"></span>
+              <span class="product-row__emoji" aria-hidden="true"><img src="./src/assets/images/OIP (1).webp" alt="fitness database"></span>
+              </span>
+              <span class="product-row__visual-badge">Database</span>
+            </div>
+            <div class="product-row__content">
+              <p class="product-row__category anim-right delay-1" style="color:var(--secondary);">Fitness</p>
+              <h2 class="product-row__title anim-right delay-2">FitBase — Gym Management Database</h2>
+              <p class="product-row__desc anim-right delay-3">
+                A comprehensive database for gym owners to track member subscriptions, attendance logs,
+                trainer assignments, equipment inventory, and financial records all in one place.
+              </p>
+              <ul class="product-row__tags anim-right delay-4" aria-label="Tags">
+                <li class="product-row__tag">Members</li>
+                <li class="product-row__tag">Attendance</li>
+                <li class="product-row__tag">Billing</li>
+                <li class="product-row__tag">Trainers</li>
+              </ul>
+              <div class="product-row__actions anim-right delay-5">
+                <span class="product-row__status product-row__status--new">Available</span>
+                <a href="contact.html" class="product-row__link">
+                  Explore
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- ④ TimeBase — image RIGHT, text LEFT -->
+          <li class="product-row product-row--reverse" data-category="database" role="listitem">
+            <div class="product-row__visual anim-scale">
+              <div class="product-row__visual-bg" style="background:linear-gradient(135deg,#0a0e28 0%,#14183c 50%,#0c1030 100%);"></div>
+              <span class="product-row__deco product-row__deco--1"></span>
+              <span class="product-row__deco product-row__deco--2"></span>
+              <span class="product-row__deco product-row__deco--3"></span>
+              <span class="product-row__emoji" aria-hidden="true"><img src="./src/assets/images/planning-work-from-home.jpg" alt="database"></span>
+              <span class="product-row__visual-badge">Beta</span>
+            </div>
+            <div class="product-row__content">
+              <p class="product-row__category anim-left delay-1" style="color:#9333EA;">Database</p>
+              <h2 class="product-row__title anim-left delay-2">TimeBase — Time Tracking Database</h2>
+              <p class="product-row__desc anim-left delay-3">
+                A backend database for tracking work hours, task durations, deadlines, and project
+                timelines across teams — designed for accuracy, easy reporting, and seamless integration.
+              </p>
+              <ul class="product-row__tags anim-left delay-4" aria-label="Tags">
+                <li class="product-row__tag">Tasks</li>
+                <li class="product-row__tag">Deadlines</li>
+                <li class="product-row__tag">Reports</li>
+                <li class="product-row__tag">Teams</li>
+              </ul>
+              <div class="product-row__actions anim-left delay-5">
+                <span class="product-row__status product-row__status--beta">Beta</span>
+                <a href="contact.html" class="product-row__link">
+                  Join Beta
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- ⑤ FlowTime — image LEFT, text RIGHT -->
+          <li class="product-row" data-category="management" role="listitem">
+            <div class="product-row__visual anim-scale">
+              <div class="product-row__visual-bg" style="background:linear-gradient(135deg,#081828 0%,#0e2040 50%,#081428 100%);"></div>
+              <span class="product-row__deco product-row__deco--1"></span>
+              <span class="product-row__deco product-row__deco--2"></span>
+              <span class="product-row__deco product-row__deco--3"></span>
+              <span class="product-row__emoji" aria-hidden="true"><img src="./src/assets/images/management-icon-photo.jpg" alt="Management App"></span>
+              <span class="product-row__visual-badge">Coming Soon</span>
+            </div>
+            <div class="product-row__content">
+              <p class="product-row__category anim-right delay-1" style="color:var(--primary);">Management App</p>
+              <h2 class="product-row__title anim-right delay-2">FlowTime — Time Management Application</h2>
+              <p class="product-row__desc anim-right delay-3">
+                A productivity app that helps individuals and teams plan, prioritize, and track
+                their time. Includes visual dashboards, smart reminders, and weekly performance summaries.
+              </p>
+              <ul class="product-row__tags anim-right delay-4" aria-label="Tags">
+                <li class="product-row__tag">Productivity</li>
+                <li class="product-row__tag">Dashboard</li>
+                <li class="product-row__tag">Reminders</li>
+                <li class="product-row__tag">Analytics</li>
+              </ul>
+              <div class="product-row__actions anim-right delay-5">
+                <span class="product-row__status product-row__status--soon">Coming Soon</span>
+                <a href="contact.html" class="product-row__link">
+                  Notify Me
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- ⑥ BTB SampleKit — image RIGHT, text LEFT -->
+          <li class="product-row product-row--reverse" data-category="management" role="listitem">
+            <div class="product-row__visual anim-scale">
+              <div class="product-row__visual-bg" style="background:linear-gradient(135deg,#140a28 0%,#1e103a 50%,#0e0820 100%);"></div>
+              <span class="product-row__deco product-row__deco--1"></span>
+              <span class="product-row__deco product-row__deco--2"></span>
+              <span class="product-row__deco product-row__deco--3"></span>
+              <span class="product-row__emoji" aria-hidden="true"><img src="./src/assets/images/ui-code.png" alt=""></span>
+              <span class="product-row__visual-badge">Free</span>
+            </div>
+            <div class="product-row__content">
+              <p class="product-row__category anim-left delay-1" style="color:var(--secondary);">Resources</p>
+              <h2 class="product-row__title anim-left delay-2">BTB SampleKit — Code & UI Examples</h2>
+              <p class="product-row__desc anim-left delay-3">
+                A curated collection of sample projects, UI components, and real code examples from
+                BTB's work — ideal for teams looking for reliable references or proven starting points.
+              </p>
+              <ul class="product-row__tags anim-left delay-4" aria-label="Tags">
+                <li class="product-row__tag">Components</li>
+                <li class="product-row__tag">Templates</li>
+                <li class="product-row__tag">Open Source</li>
+                <li class="product-row__tag">Free</li>
+              </ul>
+              <div class="product-row__actions anim-left delay-5">
+                <span class="product-row__status">Free Forever</span>
+                <a href="contact.html" class="product-row__link">
+                  Browse Kit
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+
+      <!-- CTA Banner -->
+      <section class="container" aria-labelledby="cta-heading">
+        <div class="products-cta anim-up">
+          <h2 class="products-cta__title" id="cta-heading">Need a Custom Product?</h2>
+          <p class="products-cta__sub">
+            Have a specific idea in mind? BTB builds tailor-made software solutions.<br />
+            Let's bring your vision to life.
+          </p>
+          <div class="products-cta__actions">
+            <a href="contact.html" class="btn">Start a Project</a>
+            <a href="services.html" class="btn btn--outline">View Services</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 BTB. All rights reserved.</p>
+      </div>
+    </footer>
+
+
+    <!-- ══════════════════════════════════════
+         SCRIPTS — defer, modular (per project_principles)
+         main.js   → shared: theme, navbar, stars
+         products.js → page-specific: filter, reveal
+    ══════════════════════════════════════ -->
+    <script src="./src/js/main.js"     defer></script>
+    <script src="./src/js/products.js" defer></script>
+
+  </body>
+</html>

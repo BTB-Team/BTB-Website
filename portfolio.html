@@ -1,17 +1,456 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTB Websit</title>
+    <title>BTB Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="src/css/main.css">
 <link rel="stylesheet" href="src/css/portfolio.css">
 </head>
 <body>
 
 
+    <main>
+        <!-- Hero Section -->
+        <header class="hero" id="home">
+            <div class="hero-content">
+                <span class="hero-badge">Welcome to BTB</span>
+                <h1>We Build <span>Digital Excellence</span></h1>
+                <p>BTB is a forward-thinking web development and design company. We craft stunning, user-friendly websites with cutting-edge UI/UX design. We also specialize in cybersecurity solutions. Whether you are a company or an individual, we accept projects of all sizes and deliver on time. We welcome volunteers who want to grow their skills in web development and design.</p>
+                <div class="hero-features">
+                    <article class="feature-creative reveal">
+                        <div class="feature-icon-wrap"><i class="fas fa-code" aria-hidden="true"></i></div>
+                        <h4>Web Development</h4>
+                        <p>Custom solutions with modern tech stack</p>
+                    </article>
+                    <article class="feature-creative reveal reveal-delay-1">
+                        <div class="feature-icon-wrap"><i class="fas fa-paint-brush" aria-hidden="true"></i></div>
+                        <h4>UI/UX Design</h4>
+                        <p>Beautiful interfaces that users love</p>
+                    </article>
+                    <article class="feature-creative reveal reveal-delay-2">
+                        <div class="feature-icon-wrap"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                        <h4>Cybersecurity</h4>
+                        <p>Protect your digital assets 24/7</p>
+                    </article>
+                    <article class="feature-creative reveal reveal-delay-3">
+                        <div class="feature-icon-wrap"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h4>Volunteer Program</h4>
+                        <p>Join us and grow your skills</p>
+                    </article>
+                </div>
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects" aria-labelledby="projects-heading">
+            <div class="section-header reveal">
+                <h2 id="projects-heading">Projects <span>Delivered</span></h2>
+                <p>Some of the amazing work we have done for our clients</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <figure class="project-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-Commerce Platform dashboard showing analytics" loading="lazy" decoding="async">
+                        <div class="project-overlay"><i class="fas fa-external-link-alt" aria-hidden="true"></i></div>
+                    </figure>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A fully responsive online store with secure payment integration and real-time inventory management.</p>
+                       
+                        
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                <strong>Challenge:</strong> Build a scalable e-commerce platform handling 10K+ daily transactions.<br><br>
+                                <strong>Solution:</strong> Implemented microservices architecture with React frontend, Node.js backend, and Stripe payment processing. Added real-time inventory sync and AI-powered product recommendations.<br><br>
+                                <strong>Result:</strong> 200% increase in conversion rate and 40% reduction in cart abandonment.
+                            </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal reveal-delay-1">
+                    <figure class="project-img">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Healthcare Dashboard interface" loading="lazy" decoding="async">
+                        <div class="project-overlay"><i class="fas fa-external-link-alt" aria-hidden="true"></i></div>
+                    </figure>
+                    <div class="project-info">
+                        <h3>Healthcare Dashboard</h3>
+                        <p>Clean and intuitive dashboard for managing patient data with advanced analytics and reporting.</p>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                <strong>Challenge:</strong> Create a HIPAA-compliant dashboard for 500+ healthcare providers.<br><br>
+                                <strong>Solution:</strong> Built with Vue.js and Python/Django backend. Implemented end-to-end encryption, role-based access control, and automated compliance reporting.<br><br>
+                                <strong>Result:</strong> Reduced data processing time by 60% and achieved 100% HIPAA compliance score.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal reveal-delay-2">
+                    <figure class="project-img">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop" alt="Education Portal learning interface" loading="lazy" decoding="async">
+                        <div class="project-overlay"><i class="fas fa-external-link-alt" aria-hidden="true"></i></div>
+                    </figure>
+                    <div class="project-info">
+                        <h3>Education Portal</h3>
+                        <p>Interactive learning platform with video streaming, quizzes, and progress tracking for students.</p>
+                        <div class="project-tags">
+                            
+                        </div>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                <strong>Challenge:</strong> Develop a platform supporting 50K+ concurrent students with live video streaming.<br><br>
+                                <strong>Solution:</strong> Used Next.js for SSR, MongoDB for flexible data, and WebRTC for live sessions. Implemented adaptive bitrate streaming for low-bandwidth areas.<br><br>
+                                <strong>Result:</strong> 99.9% uptime during peak exam periods and 85% student satisfaction rate.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-us-section" id="why-us" aria-labelledby="why-us-heading">
+            <div class="section-header reveal">
+                <h2 id="why-us-heading">What Makes Us <span>Different</span></h2>
+                <p>Why BTB stands out from the competition</p>
+            </div>
+            <ul class="why-us-list">
+                <li class="why-us-item reveal">
+                    <i class="fas fa-rocket" aria-hidden="true"></i>
+                    <div class="item-content">
+                        <span>Fast Delivery</span>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                We understand that time is money. Our agile workflow ensures your project is delivered on schedule without compromising on quality or cutting corners.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="why-us-item reveal reveal-delay-1">
+                    <i class="fas fa-gem" aria-hidden="true"></i>
+                    <div class="item-content">
+                        <span>Quality First</span>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                Every line of code and every pixel is crafted with care. We follow industry best practices and rigorous testing to ensure flawless results.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="why-us-item reveal reveal-delay-2">
+                    <i class="fas fa-headset" aria-hidden="true"></i>
+                    <div class="item-content">
+                        <span>24/7 Support</span>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                Our relationship does not end at launch. We provide continuous support and maintenance to keep your digital presence running smoothly.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="why-us-item reveal">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <div class="item-content">
+                        <span>Security Built-In</span>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                Security is not an afterthought. We integrate robust cybersecurity measures from day one to protect your data and your users.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="why-us-item reveal reveal-delay-1">
+                    <i class="fas fa-users-cog" aria-hidden="true"></i>
+                    <div class="item-content">
+                        <span>Collaborative Approach</span>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                We work closely with you at every step. Your feedback shapes our work, ensuring the final product truly reflects your vision.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="why-us-item reveal reveal-delay-2">
+                    <i class="fas fa-infinity" aria-hidden="true"></i>
+                    <div class="item-content">
+                        <span>Scalable Solutions</span>
+                        <button class="project-btn" onclick="toggleProjectDetail(this)" aria-expanded="false">View Details</button>
+                        <div class="project-details">
+                            <div class="project-details-content">
+                                We build with growth in mind. Our architectures scale seamlessly as your business expands, saving you costly rebuilds later.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Client Stories Section -->
+        <section class="stories-section" id="stories" aria-labelledby="stories-heading">
+            <div class="section-header reveal">
+                <h2 id="stories-heading">Client <span>Stories</span></h2>
+                <p>Hear from those who have experienced the BTB difference</p>
+            </div>
+            <div class="happiness-graph reveal">
+                <div class="graph-container">
+                    <div class="graph-bar" style="height: 85%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">85%</span>
+                    </div>
+                    <div class="graph-bar" style="height: 95%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">95%</span>
+                    </div>
+                    <div class="graph-bar" style="height: 100%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">100%</span>
+                    </div>
+                    <div class="graph-bar" style="height: 90%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">90%</span>
+                    </div>
+                    <div class="graph-bar" style="height: 98%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">98%</span>
+                    </div>
+                    <div class="graph-bar" style="height: 96%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">96%</span>
+                    </div>
+                    <div class="graph-bar" style="height: 92%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">92%</span>
+                    </div>
+                    <div class="graph-bar" style="height: 82%;">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <span class="bar-label">82%</span>
+                    </div>
+                </div>
+                <div class="graph-legend">
+                    <span>Client Satisfaction Levels</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services" aria-labelledby="services-heading">
+            <div class="section-header reveal">
+                <h2 id="services-heading">Our <span>Services</span></h2>
+                <p>What we offer to help your business grow</p>
+            </div>
+            <div class="services-showcase">
+                <article class="service-showcase-card reveal">
+                    <figure class="service-media">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" alt="Web Development workspace" loading="lazy" decoding="async">
+                        <div class="service-media-overlay">
+                            <span class="service-media-badge"><i class="fas fa-play-circle" aria-hidden="true"></i> Watch Demo</span>
+                        </div>
+                    </figure>
+                    <div class="service-showcase-info">
+                        <h3><i class="fas fa-laptop-code" aria-hidden="true"></i> Web Development</h3>
+                        <p>Custom websites built with modern technologies, clean code, and optimized performance for any business need.</p>
+                        <div class="service-features-list">
+                            <span class="service-feature-tag">React</span>
+                            <span class="service-feature-tag">Node.js</span>
+                            <span class="service-feature-tag">Next.js</span>
+                            <span class="service-feature-tag">API Design</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-showcase-card reveal reveal-delay-1">
+                    <figure class="service-media">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="UI/UX Design process" loading="lazy" decoding="async">
+                        <div class="service-media-overlay">
+                            <span class="service-media-badge"><i class="fas fa-play-circle" aria-hidden="true"></i> Watch Demo</span>
+                        </div>
+                    </figure>
+                    <div class="service-showcase-info">
+                        <h3><i class="fas fa-paint-brush" aria-hidden="true"></i> UI/UX Design</h3>
+                        <p>User-centered design that creates intuitive, beautiful interfaces and seamless user experiences across all devices.</p>
+                        <div class="service-features-list">
+                            <span class="service-feature-tag">Figma</span>
+                            <span class="service-feature-tag">Prototyping</span>
+                            <span class="service-feature-tag">User Research</span>
+                            <span class="service-feature-tag">Wireframing</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-showcase-card reveal reveal-delay-2">
+                    <figure class="service-media">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Project planning meeting" loading="lazy" decoding="async">
+                        <div class="service-media-overlay">
+                            <span class="service-media-badge"><i class="fas fa-handshake" aria-hidden="true"></i> Start Now</span>
+                        </div>
+                    </figure>
+                    <div class="service-showcase-info">
+                        <h3><i class="fas fa-project-diagram" aria-hidden="true"></i> Project Acceptance</h3>
+                        <p>We accept projects from any company or individual, delivering high-quality solutions within your specified timeline.</p>
+                        <div class="service-features-list">
+                            <span class="service-feature-tag">Any Size</span>
+                            <span class="service-feature-tag">On Time</span>
+                            <span class="service-feature-tag">Quality</span>
+                            <span class="service-feature-tag">Support</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-showcase-card reveal">
+                    <figure class="service-media">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Cybersecurity monitoring" loading="lazy" decoding="async">
+                        <div class="service-media-overlay">
+                            <span class="service-media-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Secure Now</span>
+                        </div>
+                    </figure>
+                    <div class="service-showcase-info">
+                        <h3><i class="fas fa-shield-alt" aria-hidden="true"></i> Cybersecurity</h3>
+                        <p>Protect your digital assets with our comprehensive security assessments, penetration testing, and secure development practices.</p>
+                        <div class="service-features-list">
+                            <span class="service-feature-tag">Audit</span>
+                            <span class="service-feature-tag">Pen Testing</span>
+                            <span class="service-feature-tag">Compliance</span>
+                            <span class="service-feature-tag">Monitoring</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-showcase-card reveal reveal-delay-1">
+                    <figure class="service-media">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" alt="Volunteer team collaboration" loading="lazy" decoding="async">
+                        <div class="service-media-overlay">
+                            <span class="service-media-badge"><i class="fas fa-users" aria-hidden="true"></i> Join Us</span>
+                        </div>
+                    </figure>
+                    <div class="service-showcase-info">
+                        <h3><i class="fas fa-handshake" aria-hidden="true"></i> Volunteer Program</h3>
+                        <p>Join our team as a volunteer to gain real-world experience in web development and design while building your portfolio.</p>
+                        <div class="service-features-list">
+                            <span class="service-feature-tag">Mentorship</span>
+                            <span class="service-feature-tag">Real Projects</span>
+                            <span class="service-feature-tag">Portfolio</span>
+                            <span class="service-feature-tag">Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-showcase-card reveal reveal-delay-2">
+                    <figure class="service-media">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop" alt="Responsive design devices" loading="lazy" decoding="async">
+                        <div class="service-media-overlay">
+                            <span class="service-media-badge"><i class="fas fa-mobile-alt" aria-hidden="true"></i> All Devices</span>
+                        </div>
+                    </figure>
+                    <div class="service-showcase-info">
+                        <h3><i class="fas fa-expand-arrows-alt" aria-hidden="true"></i> Responsive Design</h3>
+                        <p>Websites that look and work perfectly on every screen size, from mobile phones to large desktop monitors.</p>
+                        <div class="service-features-list">
+                            <span class="service-feature-tag">Mobile</span>
+                            <span class="service-feature-tag">Tablet</span>
+                            <span class="service-feature-tag">Desktop</span>
+                            <span class="service-feature-tag">4K</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+         <div class="section-header reveal">
+                <h2 id="team-heading">Our <span>Team</span></h2>
+                <p>Meet the talented people behind BTB</p>
+            </div>
+        <section class="team-section" id="team" aria-labelledby="team-heading">
+            
+            <div class="team-showcase reveal">
+                <div class="team-image">
+                    
+                    <div class="team-table-container">
+                        <table class="team-table">
+                            <thead>
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Role</th>
+                                    <th>Expertise</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="table-member">
+                                            <img src="src/assets/images/01.jpg" alt="M.Taqi Raya" loading="lazy" decoding="async">
+                                            <span>M.Taqi Raya</span>
+                                        </div>
+                                    </td>
+                                    <td>CEO</td>
+                                    <td>Full-stack development, Cloud architecture</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-member">
+                                            <img src="src/assets/images/01.jpg" alt="Ali Reza Rayan" loading="lazy" decoding="async">
+                                            <span>Ali Reza Rayan</span>
+                                        </div>
+                                    </td>
+                                    <td>Security Analyzer</td>
+                                    <td>Cybersecurity, Threat analysis</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-member">
+                                            <img src="src/assets/images/01.jpg" alt="Alim Sadra" loading="lazy" decoding="async">
+                                            <span>Alim Sadra</span>
+                                        </div>
+                                    </td>
+                                    <td>Web Pentester</td>
+                                    <td>Penetration testing, Vulnerability assessment</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-member">
+                                            <img src="src/assets/images/01.jpg" alt="Ahmad Jafary" loading="lazy" decoding="async">
+                                            <span>Ahmad Jafary</span>
+                                        </div>
+                                    </td>
+                                    <td>Web Pentester</td>
+                                    <td>Ethical hacking, Security audits</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - No Forms -->
+        <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+            <div class="section-header reveal">
+                <a href="contact.html"><h2 id="contact-heading">Get In <span>Touch</span></h2></a>
+                <p>We would love to hear from you. Reach out through any of these channels.</p>
+           
+        </section>
+    </main>
+
+    
+    <script defer src="src/js/main.js"></script>
+    <script defer src="src/js/portfolio.js"></script>
 </body>
 </html>

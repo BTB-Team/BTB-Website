@@ -148,8 +148,8 @@ p {
 /*UTILITIES*/
 .gradient-text {
   background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  --webkit-background-clip: text;
+  --webkit-text-fill-color: transparent;
 }
 .center {
   display: flex;

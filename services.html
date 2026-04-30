@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | BTB</title>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTB Websit</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+ <meta name="description" content="BTB - Web development, cybersecurity training, SEO, hosting, graphic design, and security audits. Modern digital solutions for your business.">
+<meta name="keywords" content="web development, cybersecurity, SEO, hosting, graphic design, security audit">
+<meta name="author" content="BTB">
+<title>BTB | services</title>
+<link rel="shortcat icon" href="src/assets/image/BTB-logo.webp" type="image">
+<!-- googel font  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- font  awesomw -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="src/css/main.css">
 <link rel="stylesheet" href="src/css/services.css">
 </head>
-<<<<<<< HEAD
-<body class="services-page">
-    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+<body class="service-page">
+  <!--lodding-->
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">BTB</p>
+  </div>
+  <!--nevbar section-->
+  <header class="header" id="mainHeader">
+    <div class="container header__container">
+      <div class="logo">
+      <img src="src/assets/image/BTB-logo.webp" alt="image" width="auto" height="80px">
+    </div>
+      <nav class="navbar">
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="product.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="Bolg.html" class="nav-link">Bolg</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </div>
+      </nav>
+      <div class="dropdown">
+    <button class="dropbtn">
+      <i class="fas fa-cog"></i>
+    </button>
 
+    <div class="dropdown-menu">
+      <button id="systemMode">
+        <i class="fas fa-desktop"></i>
+        <span>System</span>
+      </button>
+
+      <button id="darkMode">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+
+      <button id="lightMode">
+        <i class="fas fa-sun"></i>
+        <span>Light Mode</span>
+      </button>
+    </div>
+  </div>
+    </div>
+  </header>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
     <main>
         <!-- HERO -->
         <section class="services-hero services-reveal" aria-labelledby="servicesHeroTitle">
@@ -394,11 +445,85 @@
             </div>
         </section>
     </main>
-
+    <!-- footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer_grid">
+        <div class="footer_brand">
+          <div class="logo logo_footer">BTB</div>
+          <p>Empowering businesses with next‑gen tech, cybersecurity & creative solutions.</p>
+          <img src="src/assets/image/office01.webp">
+        </div>
+        
+        <div class="footer__links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="bolg.html">bolg</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Cyber Security</a></li>
+            <li><a href="services.html">Web Development</a></li>
+            <li><a href="services.html">SEO & Marketing</a></li>
+            <li><a href="services.html">Hosting & Domains</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__contact">
+          <div class="footer__links">
+            <h4>Contact</h4>
+          </div>
+          <p>
+            <i class="fas fa-envelope"></i> 
+            btbteam.org
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> 
+            +93 77 294 0551 <br>
+            +93 76 742 3806
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 
+            Phase 2 Town, Kabul, Afghanistan
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="facebook">
+              <img src="src/assets/icon/facebook.svg" alt="">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <img src="src/assets/icon/linkedin.svg" alt="">
+            </a>
+            <a href="#" aria-label="GitHub">
+              <img src="src/assets/icon/github(1).svg" alt="">
+            </a>
+            <a href="#" aria-label="telegram">
+              <img src="src/assets/icon/telegram.svg" alt="">
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 BTB — Built with performance & clean code. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- to top -->
+   <a href="#" class="top">
+    <i class="fa-solid fa-arrow-up"></i>
+ </a>
+    
+    <script src="src/js/main.js"></script>
     <script src="src/js/services.js"></script>
-=======
 <body>
     
->>>>>>> 4fc65943c23adf495123eb31fbd175d114314206
 </body>
 </html>

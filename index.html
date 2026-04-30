@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTB Websit</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+ <meta name="description" content="BTB - Web development, cybersecurity training, SEO, hosting, graphic design, and security audits. Modern digital solutions for your business.">
+<meta name="keywords" content="web development, cybersecurity, SEO, hosting, graphic design, security audit">
+<meta name="author" content="BTB">
+<title>BTB | BEYOND THE BORDERS</title>
+<link rel="shortcat icon" href="src/assets/image/BTB-logo.webp" type="image">
+<!-- googel font  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- font  awesomw -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="src/css/main.css">
 <link rel="stylesheet" href="src/css/home-hero.css">
 <link rel="stylesheet" href="src/css/home-about.css">
@@ -14,7 +21,505 @@
 <link rel="stylesheet" href="src/css/home-protfolio.css">
 <link rel="stylesheet" href="src/css/home-services.css">
 </head>
-<body>
-    
+<body class="home-page">
+  <!--lodding-->
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">BTB</p>
+  </div>
+  <!--nevbar section-->
+  <header class="header" id="mainHeader">
+    <div class="container header__container">
+      <div class="logo">
+      <img src="src/assets/image/BTB-logo.webp" alt="image" width="auto" height="80px">
+    </div>
+      <nav class="navbar">
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </div>
+      </nav>
+      <div class="dropdown">
+    <button class="dropbtn">
+      <i class="fas fa-cog"></i>
+    </button>
+
+    <div class="dropdown-menu">
+      <button id="systemMode">
+        <i class="fas fa-desktop"></i>
+        <span>System</span>
+      </button>
+
+      <button id="darkMode">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+
+      <button id="lightMode">
+        <i class="fas fa-sun"></i>
+        <span>Light Mode</span>
+      </button>
+    </div>
+  </div>
+    </div>
+  </header>
+  <main>
+    <!--Hero section-->
+    <section class="hero">
+      <div class="container hero_container">
+        <div class="hero_content">
+          <div class="hero_first_text">
+            <span class="hero_first_pulse">
+              <i class="fas fa-bolt"></i> Next-gen IT solutions
+            </span> 
+          </div>
+          <h1 class="hero_title">
+            Secure your digital <span class="gradient-text">future</span> with <span class="gradient-text">BTB</span> 
+          </h1>
+          <p class="hero_description">
+            Web development * Cybersecurity training * SEO * Hosting & domains * Graphic design * Security audits
+          </p>
+          <div class="hero_actions">
+            <a href="contact.html" class="btn btn-primary">
+              Get Started <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="services.html" class="btn btn-outline">
+              Explore Services
+            </a>
+          </div>
+         <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__number">15+</span>
+              <span class="stat__label">Projects delivered</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">98%</span>
+              <span class="stat__label">Client satisfaction</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">24/7</span>
+              <span class="stat__label">Support ready</span>
+            </div>
+          </div>
+        </div>
+        <!-- hero animation image-->
+         <div class="hero_visual">
+          <div class="floating-card floating-card-1">
+            <img src="src/assets/image/project04.webp" alt="image BTB">
+          </div>
+          <div class="floating-card floating-card-2">
+            <img src="src/assets/image/image01.webp" alt="BTB image">
+          </div>
+          <div class="floating-card floating-card-3">
+            <img src="src/assets/image/project2.webp" alt="BTB image">
+          </div>
+          <div class="hero__glow"></div>
+        </div>
+      </div> 
+    </section>
+
+    <!-- the service preview section -->
+    <section class="services-preview">
+      <div class="container">
+        <div class="service-header">
+          <span class="section-tag">What we offer</span>
+          <h2 class="service-title">
+            Comprehensive <span class="gradient-text">tech & creative</span> services
+          </h2>
+          <p class="section-subtitle">
+            From web development to advanced cybersecurity — we deliver high-performance solutions.
+          </p>
+        </div>
+        <div class="cards-grid">
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-globe"></i></div>
+    <h3 class="card_title">Web Development (Afghanistan)</h3>
+    <p class="card_desc">
+      We design and develop modern websites for businesses and organizations in Afghanistan, focusing on high performance, full responsiveness, and strong security standards.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-globe"></i></div>
+    <h3 class="card_title">Web Development (International)</h3>
+    <p class="card_desc">
+      We build scalable, high-performance websites for global clients using modern technologies and industry best practices to ensure reliability and user satisfaction.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-database"></i></div>
+    <h3 class="card_title">Database Development</h3>
+    <p class="card_desc">
+      We design secure and optimized database systems for educational, commercial, and enterprise solutions with efficient data management and high performance.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-code"></i></div>
+    <h3 class="card_title">Software Development</h3>
+    <p class="card_desc">
+      We develop custom software solutions, including desktop and web applications, tailored to business needs with a focus on performance, usability, and clean design.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-shield-alt"></i></div>
+    <h3 class="card_title">Security Analysis</h3>
+    <p class="card_desc">
+      We analyze system security, perform penetration testing, and identify vulnerabilities to protect your infrastructure from cyber threats and ensure data safety.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-paint-brush"></i></div>
+    <h3 class="card_title">Graphic Design</h3>
+    <p class="card_desc">
+      We create professional visual designs including logos, banners, social media content, and brand identity for both local and international businesses.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-server"></i></div>
+    <h3 class="card_title">Hosting & Deployment</h3>
+    <p class="card_desc">
+      We provide reliable hosting, deployment, and server management solutions for projects on both local and international infrastructure with high availability.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+  <div class="card service-card">
+    <div class="card_icon"><i class="fas fa-chart-line"></i></div>
+    <h3 class="card_title">SEO & Digital Growth</h3>
+    <p class="card_desc">
+      We optimize websites for search engines and help businesses grow online by increasing visibility, driving organic traffic, and improving digital performance.
+    </p>
+    <span class="service-btn">
+      <a href="service.html"><i class="fa-solid fa-right-long"></i></a>
+    </span>
+  </div>
+</div>
+</div>
+</section>
+    <!-- abotut section -->
+    <section class="why-us">
+      <div class="container why-us_grid">
+        <div class="why-us_content">
+          <span class="section-tag">why choose us</span>
+          <h2 class="section-title">
+            High‑performance, <span class="gradient-text">clean code</span> & zero compromise
+          </h2>
+          <p class="why-us_desc">
+            We build with modern stack (HTML5, CSS3, Vanilla JS, React js, Node.js, SQL ...) and follow strict performance rules: WebP lazy loading, optimized animations, and modular architecture.
+          </p>
+          <ul class="check-list">
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              Fully responsive & accessible design
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              Fast loading speed & optimized assets
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              Semantic HTML / modular CSS architecture
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              Dark / Light mode seamless transition
+            </li>
+          </ul>
+          <a href="about.html" class="btn btn-primary">
+            Learn more about us <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <span class="about-img">
+          <img src="src/assets/image/web.webp" alt="" loading="lazy">
+           <div class="hero__glow"></div>
+        </span>
+      </div>
+    </section>
+  <!-- this section for the product -->  
+     <section class="product-image">
+      <div class="container prodect-hedear">
+      <span class="section-tag">Our best</span>
+      <div class="product-dec"> 
+        <span class="product-text">From ability to <span class="gradient-text"> reality</span></span>
+        <span class="product-text-dec">We build the best systems for you to help your business thrive.</span>
+      </div>
+      <div class="product-sliders">
+        <div class="product-image-slider">
+          <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/image2.webp">
+              </div>
+              <div class="card-back">
+                <img src="src/assets/image/project03.webp">
+              </div>
+            </div>
+          </div>
+          <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/image5.webp">
+              </div>
+              <div class="card-back">
+                <img src="src/assets/image/image1.webp">
+              </div>
+            </div>
+          </div>
+          <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/image6.webp">
+              </div>
+              <div class="card-back">
+                <img src="assets/image/project03.webp">
+              </div>
+            </div>
+          </div>
+          <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/image9.webp">
+              </div>
+              <div class="card-back">
+                <img src="src/assets/image/image8.webp">
+              </div>
+            </div>
+          </div>
+          <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/image7.webp">
+              </div>
+              <div class="card-back">
+                <img src="src/assets/image/image01.webp">
+              </div>
+            </div>
+          </div>
+
+    <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/image8.webp">
+              </div>
+              <div class="card-back">
+                <img src="src/assets/image/image9.webp">
+              </div>
+            </div>
+          </div>
+    <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/project04.webp">
+              </div>
+              <div class="card-back">
+                <img src="src/assets/image/project5.webp">
+              </div>
+            </div>
+          </div>
+    <div class="card-service">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="src/assets/image/image12.webp">
+              </div>
+              <div class="card-back">
+                <img src="src/assets/image/image10.webp">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!--this section  Feature-->
+    <section class="Feature-home">
+      <div class="Feature-dec">
+        <span class="Feature-text">Features &<span class="gradient-text"> experiences</span></span>
+      </div>
+     <div class="Feature-grid">
+          <div class="stat-card">
+            <div class="stat-card_item">
+              <span class="stat-digit">100+</span>
+              <span>Developer</span>
+            </div>
+            <div class="stat-card_item">
+              <span class="stat-digit">10+</span>
+              <span>Communication with companies</span>
+            </div>
+            <div class="stat-card_item">
+              <span class="stat-digit">4.9★</span>
+              <span>Client rating</span>
+            </div>
+            <div class="stat-card_item">
+              <span class="stat-digit">2+</span>
+              <span>Years expertise</span>
+            </div>
+          </div>
+        <img src="src/assets/image/app.webp" alt="">
+      </div>
+      </section>
+
+    <!-- portfolio-->
+     <section class="protfolio">
+      <div class="container protfolio__hedear">
+        <span class="section-tag">What we do</span>
+      <div class="protfolio-dec"> 
+        <span class="protfolio-text">The best examples of work in <span class="gradient-text">BTB</span> </span>
+        <span class="protfolio-text-dec">Relying on quality and speed of action, we demonstrated the best services in practice.</span>
+      </div>
+      <div class="slider">
+    <div class="slides" id="slides">
+        <div class="slide">
+          <div class="card">
+            <img src="src/assets/image/project1.webp">
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="src/assets/image/project2.webp">
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="src/assets/image/project3.webp">
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="src/assets/image/project4.webp">
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="src/assets/image/project5.webp">
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="src/assets/image/project6.webp">
+          </div>
+        </div>
+    </div>
+    <button class="btn-prev prev">&#10094;</button>
+    <button class="btn-next next">&#10095;</button>
+  </div>
+  <button class="btn">View All Portfolio</button>
+</div>
+</section>
+    <!-- this section for the CTA section -->
+    <section class="cta-section">
+      <div class="container cta__inner">
+        <div class="cta__text">
+          <h2>Ready to scale your business?</h2>
+          <p>Let's discuss your next project — from web development to security hardening.</p>
+        </div>
+        <a href="contact.html" class="btn btn-cta">
+          Contact us today <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer_grid">
+        <div class="footer_brand">
+          <div class="logo logo_footer">BTB</div>
+          <p>Empowering businesses with next‑gen tech, cybersecurity & creative solutions.</p>
+          <img src="src/assets/image/office01.webp">
+        </div>
+        
+        <div class="footer__links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="bolg.html">bolg</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Cyber Security</a></li>
+            <li><a href="services.html">Web Development</a></li>
+            <li><a href="services.html">SEO & Marketing</a></li>
+            <li><a href="services.html">Hosting & Domains</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__contact">
+          <div class="footer__links">
+            <h4>Contact</h4>
+          </div>
+          <p>
+            <i class="fas fa-envelope"></i> 
+            btbteam.org
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> 
+            +93 77 294 0551 <br>
+            +93 76 742 3806
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 
+            Phase 2 Town, Kabul, Afghanistan
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="facebook">
+              <img src="src/assets/icon/facebook.svg" alt="">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <img src="src/assets/icon/linkedin.svg" alt="">
+            </a>
+            <a href="#" aria-label="GitHub">
+              <img src="src/assets/icon/github(1).svg" alt="">
+            </a>
+            <a href="#" aria-label="telegram">
+              <img src="src/assets/icon/telegram.svg" alt="">
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 BTB — Built with performance & clean code. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- to top -->
+   <a href="#" class="top">
+    <i class="fa-solid fa-arrow-up"></i>
+ </a>
+ <script src="src/js/main.js" defer></script>
 </body>
 </html>

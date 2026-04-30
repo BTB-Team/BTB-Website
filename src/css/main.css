@@ -1,9 +1,9 @@
- /* ROOT & THEME */
+/* ROOT & THEME */
 :root {
   /* Brand */
-  --primary: #2563EB;
-  --secondary: #7C3AED;
-  --gradient: linear-gradient(135deg, #2563EB, #7C3AED, #9333EA);
+  --primary: #2563eb;
+  --secondary: #7c3aed;
+  --gradient: linear-gradient(135deg, #2563eb, #7c3aed, #9333ea);
   /* Radius */
   --radius-pill: 1000px;
   --radius-md: 16px;
@@ -17,21 +17,21 @@
 }
 /* DARK MODE */
 :root.dark {
-  --bg: #0B0F19;
+  --bg: #0b0f19;
   --surface: #111827;
-  --text: #F9FAFB;
-  --text-muted: #9CA3AF;
-  --border: rgba(255,255,255,0.08);
-  --border-hover: rgba(124,58,237,0.5);
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(124, 58, 237, 0.5);
 }
 /* LIGHT MODE */
 :root.light {
-  --bg: #F8FAFC;
-  --surface: #FFFFFF;
-  --text: #0F172A;
-  --text-muted: #64748B;
-  --border: rgba(0,0,0,0.08);
-  --border-hover: rgba(124,58,237,0.3);
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(124, 58, 237, 0.3);
 }
 /* RESET */
 * {
@@ -42,7 +42,7 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /* CONTAINER (Responsive) */
 .container {
@@ -375,7 +375,7 @@ html{
 }
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(124,58,237,0.4);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
 }
 /* Responsive Button */
 @media (max-width: 640px) {
@@ -398,12 +398,12 @@ html{
 /* Hover */
 .input:hover {
   border-color: var(--border-hover);
-  box-shadow: 0 5px 20px rgba(124,58,237,0.15);
+  box-shadow: 0 5px 20px rgba(124, 58, 237, 0.15);
 }
 /* Focus */
 .input:focus {
   border-color: var(--border-hover);
-  box-shadow: 0 0 0 3px rgba(124,58,237,0.2);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
 }
 
 /*CARD*/
@@ -418,7 +418,7 @@ html{
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--border-hover);
-  box-shadow: 0 15px 40px rgba(124,58,237,0.15);
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.15);
 }
 /* Responsive Card */
 @media (max-width: 640px) {

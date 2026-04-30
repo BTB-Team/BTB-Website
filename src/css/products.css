@@ -61,96 +61,6 @@
   background: radial-gradient(ellipse, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
   filter: blur(60px);
 }
-
-
-/* ──────────────────────────────────────────────────────────────
-   NAVBAR
-────────────────────────────────────────────────────────────── */
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: rgba(8, 12, 24, 0.82);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.navbar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
-  gap: 1rem;
-}
-
-.navbar__logo img {
-  /* font-size: 1.5rem;
-  font-weight: 800;
-  text-decoration: none;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  flex-shrink: 0; */
-  width: 48px;
-
-}
-
-.navbar__links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-}
-
-.navbar__link {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: var(--transition);
-  position: relative;
-  padding-bottom: 4px;
-}
-
-/* Animated underline */
-.navbar__link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gradient);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.navbar__link:hover::after,
-.navbar__link--active::after {
-  width: 100%;
-}
-
-.navbar__link:hover,
-.navbar__link--active {
-  color: var(--text);
-}
-
-.navbar__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
-}
-
-/* Compact button variant for navbar */
-.btn--sm {
-  padding: 10px 22px;
-  font-size: 14px;
-}
-
 /* Outline button variant */
 .btn--outline {
   background: transparent;
@@ -191,41 +101,6 @@
   color: var(--text);
   transition: var(--transition);
   line-height: 1;
-}
-
-/* ── Mobile nav ── */
-@media (max-width: 768px) {
-  .navbar__hamburger {
-    display: block;
-  }
-
-  .navbar__links {
-    display: none;
-    position: absolute;
-    top: 68px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    background: rgba(8, 12, 24, 0.97);
-    border-bottom: 1px solid var(--border);
-    padding: 0.75rem 0;
-    z-index: 199;
-  }
-
-  .navbar__links.is-open {
-    display: flex;
-  }
-
-  .navbar__link {
-    padding: 0.75rem 1.5rem;
-    width: 100%;
-    display: block;
-  }
-
-  .navbar__link::after {
-    display: none;
-  }
 }
 
 
@@ -667,26 +542,6 @@
     margin: 48px 0;
   }
 }
-
-
-/* ──────────────────────────────────────────────────────────────
-   FOOTER
-────────────────────────────────────────────────────────────── */
-
-.footer {
-  border-top: 1px solid var(--border);
-  padding: 28px 0;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.footer p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-
 /* ──────────────────────────────────────────────────────────────
    ANIMATIONS
 ────────────────────────────────────────────────────────────── */

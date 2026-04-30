@@ -1,0 +1,341 @@
+       .contact-page,
+        .contact-page * {
+            box-sizing: border-box;
+        }
+
+        .contact-page {
+            font-family: 'Outfit', sans-serif;
+            background: #0a0a1a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .contact-page .glow-cursor {
+            pointer-events: none;
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,240,255,0.08) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            transition: left 0.15s ease-out, top 0.15s ease-out;
+        }
+
+        .contact-page canvas#contactParticles {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .contact-page .glass {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .contact-page .glass-strong {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-page .float-field {
+            position: relative;
+        }
+
+        .contact-page .float-field input,
+        .contact-page .float-field textarea {
+            width: 100%;
+            padding: 20px 16px 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.04);
+            color: #e2e8f0;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .contact-page .float-field input:focus,
+        .contact-page .float-field textarea:focus {
+            border-color: rgba(0,240,255,0.5);
+            box-shadow: 0 0 20px rgba(0,240,255,0.1);
+        }
+
+        .contact-page .float-field label {
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            color: rgba(255,255,255,0.35);
+            font-size: 15px;
+            pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .contact-page .float-field input:focus ~ label,
+        .contact-page .float-field input:not(:placeholder-shown) ~ label,
+        .contact-page .float-field textarea:focus ~ label,
+        .contact-page .float-field textarea:not(:placeholder-shown) ~ label {
+            top: 4px;
+            font-size: 11px;
+            color: #00f0ff;
+        }
+
+        .contact-page .err-msg {
+            min-height: 18px;
+            margin-top: 4px;
+            color: #ff4d6a;
+            font-size: 12px;
+        }
+
+        .contact-page .send-btn {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #00f0ff 0%, #7b61ff 100%);
+            color: #0a0a1a;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .contact-page .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,240,255,0.3);
+        }
+
+        .contact-page .send-btn:active {
+            transform: scale(0.97);
+        }
+
+        .contact-page .send-btn.loading {
+            pointer-events: none;
+        }
+
+        .contact-page .send-btn .spinner {
+            display: none;
+        }
+
+        .contact-page .send-btn.loading .spinner {
+            display: inline-block;
+        }
+
+        .contact-page .send-btn.loading .btn-text {
+            display: none;
+        }
+
+        .contact-page .send-btn .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: scale(0);
+            animation: contactRipple 0.6s linear;
+        }
+
+        .contact-page .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2.5px solid rgba(10,10,26,0.3);
+            border-top-color: #0a0a1a;
+            border-radius: 50%;
+            animation: contactSpin 0.7s linear infinite;
+        }
+
+        .contact-page .info-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-page .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(0,240,255,0.1);
+        }
+
+        .contact-page .social-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            transition: all 0.3s;
+        }
+
+        .contact-page .social-icon:hover {
+            background: rgba(0,240,255,0.15);
+            border-color: rgba(0,240,255,0.4);
+            color: #00f0ff;
+            transform: translateY(-3px);
+        }
+
+        .contact-page .success-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10,10,26,0.95);
+            border-radius: 20px;
+            z-index: 10;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .contact-page .success-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .contact-page .toggle-btn {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            border-radius: 13px;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: background 0.3s;
+        }
+
+        .contact-page .toggle-btn.active {
+            background: rgba(0,240,255,0.3);
+            border-color: rgba(0,240,255,0.5);
+        }
+
+        .contact-page .toggle-btn .dot {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            transition: transform 0.3s;
+        }
+
+        .contact-page .toggle-btn.active .dot {
+            transform: translateX(24px);
+            background: #00f0ff;
+        }
+
+        .contact-page .fade-up {
+            animation: contactFadeUp 0.7s ease-out both;
+        }
+
+        .contact-page .fade-up-d1 { animation-delay: 0.1s; }
+        .contact-page .fade-up-d2 { animation-delay: 0.2s; }
+        .contact-page .fade-up-d3 { animation-delay: 0.3s; }
+        .contact-page .fade-up-d4 { animation-delay: 0.4s; }
+
+        .contact-page .typewriter-wrap {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: contactTypewriter 1.5s steps(20) 0.5s both;
+        }
+
+        .contact-page.light {
+            background: linear-gradient(135deg, #f6fbff 0%, #eef7ff 45%, #e7f1ff 100%);
+            color: #172033;
+        }
+
+        .contact-page.light .glass,
+        .contact-page.light .glass-strong {
+            background: rgba(255, 255, 255, 0.78);
+            border-color: rgba(23, 32, 51, 0.08);
+            /* box-shadow: inset 2px 3px 5px rgba(0, 204, 255, 0.2); */
+        }
+
+        .contact-page.light .float-field input,
+        .contact-page.light .float-field textarea {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.12);
+            color: #1a1a2e;
+        }
+
+        .contact-page.light .float-field label {
+            color: rgba(0,0,0,0.4);
+        }
+
+        .contact-page.light .social-icon {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.1);
+            color: rgba(0,0,0,0.4);
+        }
+
+        .contact-page.light .social-icon:hover {
+            background: rgba(0,240,255,0.1);
+            color: #0090a0;
+        }
+
+        .contact-page.light .success-overlay {
+            background: rgba(246, 251, 255, 0.96);
+            color: #172033;
+        }
+
+        .contact-page.light .glow-cursor {
+            background: radial-gradient(circle, rgba(0, 180, 220, 0.12) 0%, transparent 70%);
+        }
+
+        .contact-page #contactResetBtn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .contact-page.light #contactResetBtn {
+            background: rgba(23, 32, 51, 0.06);
+            border-color: rgba(23, 32, 51, 0.12);
+            color: #172033;
+        }
+
+        @keyframes contactRipple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        @keyframes contactSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes contactFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes contactTypewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes contactPopIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        .contact-page .check-circle {
+            animation: contactPopIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+        }
+  

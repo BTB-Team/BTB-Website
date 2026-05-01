@@ -324,7 +324,7 @@ html{
     top: 70px;
     left: -100%;
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     flex-direction: column;
     background: var(--primary);
     padding: 40px;
@@ -445,8 +445,8 @@ p {
 /*UTILITIES*/
 .gradient-text {
   background: var(--gradient);
-  --webkit-background-clip: text;
-  --webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .center {
   display: flex;

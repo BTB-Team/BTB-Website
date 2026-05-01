@@ -24,6 +24,7 @@ html.light .hero {
 .hero-content {
   max-width: 900px;
   text-align: center;
+  padding: 50px;
 }
 .hero-badge {
   display: inline-block;

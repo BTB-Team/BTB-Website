@@ -3,7 +3,6 @@
             const body = document.body;
             const canvas = document.getElementById('contactParticles');
             const cursor = document.getElementById('contactGlowCursor');
-            const toggle = document.getElementById('contactThemeToggle');
             const form = document.getElementById('contactForm');
             const sendBtn = document.getElementById('contactSendBtn');
             const overlay = document.getElementById('contactSuccessOverlay');
@@ -52,11 +51,6 @@
                 });
 
                 requestAnimationFrame(drawParticles);
-            }
-
-            function syncThemeStyles() {
-                const isLight = body.classList.contains('light');
-                particleColor = isLight ? 'rgba(51, 35, 23, 0.12)' : 'rgba(0,240,255,0.25)';
             }
 
             function showError(fieldId, message) {
@@ -126,20 +120,6 @@
             particleFields.forEach((fieldId) => {
                 document.getElementById(fieldId).addEventListener('input', () => clearError(fieldId));
             });
-
-            // toggle.addEventListener('click', () => {
-            //     toggle.classList.toggle('active');
-            //     body.classList.toggle('light');
-            //     syncThemeStyles();
-            // });
-
-            // toggle.addEventListener('keydown', (event) => {
-            //     if (event.key === 'Enter' || event.key === ' ') {
-            //         event.preventDefault();
-            //         toggle.click();
-            //     }
-            // });
-
             document.addEventListener('mousemove', (event) => {
                 cursor.style.left = event.clientX + 'px';
                 cursor.style.top = event.clientY + 'px';

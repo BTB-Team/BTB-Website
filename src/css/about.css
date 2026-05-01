@@ -505,6 +505,7 @@ body.dark::before {
 .dark .about-hero {
   background: none;
   background-color: var(--surface);
+  padding-top: 160px;
 }
 
 .dark .services-item__content .section-mini__title {
@@ -605,7 +606,7 @@ a {
 .about-hero {
   margin: 0;
   width: 100%;
-  padding: 14rem 0;
+  padding-top: 22rem;
   background:
     linear-gradient(90deg, #404040c1 0%, #40404097 0%),
     url(../assets/images/about-hero-bg.webp) no-repeat center / cover;

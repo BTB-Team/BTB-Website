@@ -60,10 +60,6 @@
   max-width: 500px;
   color: var(--text-muted);
 }
-.gradient-text{
-  color: var(--primary);
-  background: transparent;
-}
 .hero_actions {
   display: flex;
   gap:var(--space-md);

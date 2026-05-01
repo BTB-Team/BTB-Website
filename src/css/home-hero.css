@@ -61,7 +61,8 @@
   color: var(--text-muted);
 }
 .gradient-text{
-  color: var(--gradient);
+  color: var(--primary);
+  background: transparent;
 }
 .hero_actions {
   display: flex;

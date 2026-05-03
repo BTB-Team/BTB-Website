@@ -100,7 +100,6 @@ window.addEventListener("scroll", () => {
 // this style for the home page sectioon 
 document.addEventListener('DOMContentLoaded', () => {
   animateNumbers();
-  heroScrollEffect();
   productSlider();
   portfolioSlider();
   lazyLoadImage();

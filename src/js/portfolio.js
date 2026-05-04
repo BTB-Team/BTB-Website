@@ -16,10 +16,10 @@ window.addEventListener("scroll", revealOnScroll);
 // Trigger once on load to reveal elements already in view
 window.addEventListener("load", revealOnScroll);
 
-   // Project Detail Toggle
-        function toggleProjectDetail(btn) {
-            const details = btn.nextElementSibling;
-            const isExpanded = details.classList.toggle('active');
-            btn.textContent = isExpanded ? 'Hide Details' : 'View Details';
-            btn.setAttribute('aria-expanded', isExpanded);
-        }
+// Project Detail Toggle
+function toggleProjectDetail(btn) {
+  const details = btn.nextElementSibling;
+  const isExpanded = details.classList.toggle("active");
+  btn.textContent = isExpanded ? "Hide Details" : "View Details";
+  btn.setAttribute("aria-expanded", isExpanded);
+}

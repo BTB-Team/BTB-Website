@@ -55,8 +55,6 @@
     const $ = (sel, ctx = document) => ctx.querySelector(sel);
     const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
     const on = (el, evt, fn) => el && el.addEventListener(evt, fn);
-    const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
-
     // Throttle for scroll events (performance)
     const throttle = (fn, wait) => {
         let last = 0;
@@ -105,7 +103,7 @@
 
         renderCards() {
             const makeCard = (s) => `
-                <article class="core-services__card services-glass" data-id="${s.id}">
+                <article class="core-services__card glass-card" data-id="${s.id}">
                     <div class="core-services__card-icon" aria-hidden="true">${s.icon}</div>
                     <h3 class="core-services__card-title">${s.title}</h3>
                     <p class="core-services__card-desc">${s.desc}</p>
@@ -234,28 +232,18 @@
         constructor() {
             this.observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Service details
-                        if (entry.target.classList.contains('service-detail')) {
-                            entry.target.classList.add('service-detail--visible');
-                        }
+                    if (!entry.isIntersecting) return;
+                    const t = entry.target;
 
-                        // Generic reveal utilities
-                        if (entry.target.classList.contains('reveal')) {
-                            entry.target.classList.add('reveal--visible');
-                        }
-                        if (entry.target.classList.contains('reveal-children')) {
-                            entry.target.classList.add('reveal-children--visible');
-                        }
-                        if (entry.target.classList.contains('services-reveal')) {
-                            entry.target.classList.add('services-reveal--in');
-                        }
-
-                        // For timeline steps
-                        if (entry.target.classList.contains('how-we-work__step')) {
-                            entry.target.classList.add('how-we-work__step--active');
-                            this.updateTimelineProgress();
-                        }
+                    if (t.classList.contains('reveal')) {
+                        t.classList.add('reveal--visible');
+                    }
+                    if (t.classList.contains('reveal-children')) {
+                        t.classList.add('reveal-children--visible');
+                    }
+                    if (t.classList.contains('how-we-work__step')) {
+                        t.classList.add('how-we-work__step--active');
+                        this.updateTimelineProgress();
                     }
                 });
             }, {
@@ -265,32 +253,34 @@
         }
 
         init() {
-            // Universal section reveal
-            $$('.services-reveal').forEach(el => this.observer.observe(el));
-
-            // Service details (staggered reveal)
-            $$('.service-detail').forEach((el, i) => {
-                el.style.setProperty('--sd', `${i * 0.12}s`);
+            const detailEls = $$('.service-detail');
+            $$('.reveal').forEach(el => {
+                if (detailEls.includes(el)) {
+                    const idx = detailEls.indexOf(el);
+                    el.style.setProperty('--reveal-delay', `${idx * 0.12}s`);
+                }
                 this.observer.observe(el);
             });
-            
-            // Timeline steps
+
+            $$('.reveal-children').forEach(el => this.observer.observe(el));
+
             $$('.how-we-work__step').forEach((el, i) => {
                 el.style.setProperty('--sd', `${i * 0.08}s`);
                 this.observer.observe(el);
             });
-            
-            // Pricing cards
-            $$('.pricing-model__card').forEach((el, i) => {
-                el.style.transitionDelay = `${i * 0.1}s`;
-                el.classList.add('reveal');
-                this.observer.observe(el);
-            });
 
-            // Header elements
-            $$('.core-services__header, .services-details__header, .how-we-work__header, .pricing-model__header').forEach(el => {
-                el.classList.add('reveal-children');
-                this.observer.observe(el);
+            const visibleNow = (el) => {
+                const r = el.getBoundingClientRect();
+                return r.top < window.innerHeight * 0.92 && r.bottom > -8;
+            };
+
+            requestAnimationFrame(() => {
+                $$('.reveal').forEach(el => {
+                    if (visibleNow(el)) el.classList.add('reveal--visible');
+                });
+                $$('.reveal-children').forEach(el => {
+                    if (visibleNow(el)) el.classList.add('reveal-children--visible');
+                });
             });
         }
 
@@ -366,79 +356,37 @@
         }
     }
 
-    // ============================================
-    // 7. PARTICLES.JS (Motion atoms background)
-    // ============================================
-    class MotionParticles {
-        init() {
-            const root = document.documentElement;
-            const host = document.getElementById('services-particles');
-            if (!host) return;
-
-            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (reduceMotion) return;
-
-            // Build once
-            host.innerHTML = '';
-
-            const styles = getComputedStyle(root);
-            const primary = (styles.getPropertyValue('--primary') || '#2563EB').trim();
-
-            const DOTS = 70;
-            const vw = () => window.innerWidth;
-            const vh = () => window.innerHeight;
-
-            for (let i = 0; i < DOTS; i++) {
-                const dot = document.createElement('span');
-                dot.className = 'services-particles__dot';
-
-                const size = (Math.random() * 1.8 + 1.2).toFixed(2); // 1.2px → 3px
-                const opacity = (Math.random() * 0.12 + 0.06).toFixed(2); // 0.06 → 0.18
-                const duration = (Math.random() * 18 + 16).toFixed(2); // 16s → 34s
-
-                const x0 = Math.random() * vw();
-                const y0 = Math.random() * vh();
-
-                // slow drift vector
-                const dx = (Math.random() * 260 - 130);
-                const dy = (Math.random() * 240 - 120);
-
-                dot.style.setProperty('--s', `${size}px`);
-                dot.style.setProperty('--o', opacity);
-                dot.style.setProperty('--d', `${duration}s`);
-                dot.style.setProperty('--c', Math.random() > 0.5 ? primary : secondary);
-                dot.style.setProperty('--x0', `${x0}px`);
-                dot.style.setProperty('--y0', `${y0}px`);
-                dot.style.setProperty('--x1', `${x0 + dx}px`);
-                dot.style.setProperty('--y1', `${y0 + dy}px`);
-
-                host.appendChild(dot);
-            }
-        }
+    /** Resolve a CSS variable like `--primary` to RGB triple via computed style (theme-safe). */
+    function cssVarRgb(varName) {
+        const probe = document.createElement('span');
+        probe.style.color = `var(${varName})`;
+        document.body.appendChild(probe);
+        const rgbStr = getComputedStyle(probe).color;
+        probe.remove();
+        const m = rgbStr.match(/[\d.]+/g);
+        if (!m || m.length < 3) return [128, 128, 128];
+        return [Math.round(+m[0]), Math.round(+m[1]), Math.round(+m[2])];
     }
 
     // ============================================
-    // 8. WHITE MUTATION PARTICLES (Canvas, required)
+    // Canvas particles (lightweight background)
     // ============================================
     class MutationParticles {
         init() {
             const canvas = document.getElementById('particles-canvas');
             if (!canvas) return;
 
-            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
             if (reduceMotion) return;
 
             const ctx = canvas.getContext('2d', { alpha: true });
             if (!ctx) return;
 
-            const root = document.documentElement;
-            const styles = getComputedStyle(root);
-            const primary = (styles.getPropertyValue('--primary') || '#2563EB').trim();
-            const secondary = (styles.getPropertyValue('--secondary') || '#7C3AED').trim();
+            let w = 0;
+            let h = 0;
+            let dpr = 1;
+            let dots = [];
 
-            const getTheme = () => (document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-
-            let w = 0, h = 0, dpr = 1;
             const resize = () => {
                 dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
                 w = Math.floor(window.innerWidth);
@@ -448,119 +396,64 @@
                 ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
             };
             resize();
-            window.addEventListener('resize', throttle(resize, 200), { passive: true });
+            window.addEventListener('resize', throttle(resize, 250), { passive: true });
 
-            const mouse = { x: w * 0.5, y: h * 0.5, active: false };
-            window.addEventListener('mousemove', (e) => {
-                mouse.x = e.clientX;
-                mouse.y = e.clientY;
-                mouse.active = true;
-            }, { passive: true });
+            const N = 20;
 
-            const N = 70;
-            const dots = Array.from({ length: N }, () => ({
-                x: Math.random() * w,
-                y: Math.random() * h,
-                vx: (Math.random() - 0.5) * 0.35,
-                vy: (Math.random() - 0.5) * 0.35,
-                r: Math.random() * 1.2 + 0.8,
-                a: 0,
-                c: primary
-            }));
+            const rebuildDots = () => {
+                const primary = cssVarRgb('--primary');
+                const secondary = cssVarRgb('--secondary');
+                const textRgb = cssVarRgb('--text');
+                const dark = document.documentElement.classList.contains('dark');
 
-            const applyThemeToDots = () => {
-                const theme = getTheme();
-                for (const p of dots) {
-                    if (theme === 'dark') {
-                        // Dark Mode: white, stronger presence
-                        p.c = '#FFFFFF';
-                        p.a = Math.random() * 0.08 + 0.36; // 0.36 → 0.44 (~0.4)
-                    } else {
-                        // Light Mode: primary tint watermark
-                        p.c = primary;
-                        p.a = Math.random() * 0.02 + 0.09; // 0.09 → 0.11 (~0.1)
-                    }
-                }
+                dots = Array.from({ length: N }, () => {
+                    const mixRgb = Math.random() > 0.5 ? primary : secondary;
+                    const rgb = dark ? textRgb : mixRgb;
+                    const a = dark
+                        ? Math.random() * 0.06 + 0.16
+                        : Math.random() * 0.04 + 0.06;
+                    return {
+                        x: Math.random() * w,
+                        y: Math.random() * h,
+                        vx: (Math.random() - 0.5) * 0.2,
+                        vy: (Math.random() - 0.5) * 0.2,
+                        r: Math.random() * 0.9 + 0.55,
+                        rgb,
+                        a
+                    };
+                });
             };
-            applyThemeToDots();
 
-            window.addEventListener('btb:themechange', applyThemeToDots);
+            rebuildDots();
+            window.addEventListener('btb:themechange', rebuildDots);
 
-            const tick = () => {
+            let last = 0;
+            const minFrameMs = 1000 / 24;
+
+            const tick = (now) => {
+                requestAnimationFrame(tick);
+                if (now - last < minFrameMs) return;
+                last = now;
+
                 ctx.clearRect(0, 0, w, h);
 
                 for (const p of dots) {
-                    // Random drift
                     p.x += p.vx;
                     p.y += p.vy;
+                    if (p.x < -8) p.x = w + 8;
+                    else if (p.x > w + 8) p.x = -8;
+                    if (p.y < -8) p.y = h + 8;
+                    else if (p.y > h + 8) p.y = -8;
 
-                    // Wrap-around edges
-                    if (p.x < -10) p.x = w + 10;
-                    if (p.x > w + 10) p.x = -10;
-                    if (p.y < -10) p.y = h + 10;
-                    if (p.y > h + 10) p.y = -10;
-
-                    // Interaction: gently follow / move away near cursor
-                    const dx = mouse.x - p.x;
-                    const dy = mouse.y - p.y;
-                    const dist2 = dx * dx + dy * dy;
-                    const radius = 180;
-                    if (mouse.active && dist2 < radius * radius) {
-                        const dist = Math.max(12, Math.sqrt(dist2));
-                        const t = 1 - dist / radius; // 0..1
-                        const follow = 0.020 * t;
-                        const repel = 0.010 * t;
-                        const dir = 0.6; // bias toward follow, still feels reactive
-                        p.vx += (dx / dist) * (follow * dir) - (dx / dist) * (repel * (1 - dir));
-                        p.vy += (dy / dist) * (follow * dir) - (dy / dist) * (repel * (1 - dir));
-                    }
-
-                    // Gentle damping to keep it calm
-                    p.vx *= 0.985;
-                    p.vy *= 0.985;
-
+                    ctx.fillStyle = `rgba(${p.rgb[0]},${p.rgb[1]},${p.rgb[2]},${p.a})`;
                     ctx.beginPath();
-                    ctx.fillStyle = withAlpha(p.c, p.a);
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                     ctx.fill();
                 }
-
-                requestAnimationFrame(tick);
             };
 
             requestAnimationFrame(tick);
         }
-    }
-
-    function withAlpha(color, alpha) {
-        const a = clamp(alpha, 0, 1);
-        const c = String(color || '').trim();
-
-        // #RGB / #RRGGBB
-        if (c[0] === '#') {
-            let r, g, b;
-            if (c.length === 4) {
-                r = parseInt(c[1] + c[1], 16);
-                g = parseInt(c[2] + c[2], 16);
-                b = parseInt(c[3] + c[3], 16);
-            } else if (c.length === 7) {
-                r = parseInt(c.slice(1, 3), 16);
-                g = parseInt(c.slice(3, 5), 16);
-                b = parseInt(c.slice(5, 7), 16);
-            }
-            if ([r, g, b].every(v => Number.isFinite(v))) {
-                return `rgba(${r}, ${g}, ${b}, ${a})`;
-            }
-        }
-
-        // rgb() / rgba()
-        const rgb = c.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*[\d.]+\s*)?\)/i);
-        if (rgb) {
-            return `rgba(${rgb[1]}, ${rgb[2]}, ${rgb[3]}, ${a})`;
-        }
-
-        // Fallback: use primary-ish tint
-        return `rgba(37, 99, 235, ${a})`;
     }
 
     // ============================================
@@ -598,51 +491,6 @@
     }
 
     // ============================================
-    // 6. COUNTER ANIMATION (Hero stats)
-    // ============================================
-    class CounterAnimation {
-        init() {
-            const stats = $$('.services-hero__stat-number');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        this.animate(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            stats.forEach(stat => observer.observe(stat));
-        }
-
-        animate(el) {
-            const text = el.textContent;
-            const hasPlus = text.includes('+');
-            const hasPercent = text.includes('%');
-            const target = parseInt(text.replace(/\D/g, ''), 10);
-            
-            if (isNaN(target)) return;
-            
-            let current = 0;
-            const duration = 2000;
-            const step = target / (duration / 16);
-            
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                let display = Math.floor(current);
-                if (hasPercent) display += '%';
-                if (hasPlus) display += '+';
-                if (text.includes('24/7')) display = '24/7';
-                el.textContent = display;
-            }, 16);
-        }
-    }
-
-    // ============================================
     // INITIALIZATION
     // ============================================
     function init() {
@@ -660,24 +508,7 @@
         new SmoothScroll().init();
         new ThemeManager().init();
         new ParallaxOrbs().init();
-        new CounterAnimation().init();
-        new MotionParticles().init();
         new MutationParticles().init();
-        
-        // Add reveal class to headers
-        $$('.services-hero__text > *').forEach((el, i) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
-        });
-        
-        // Trigger hero entrance
-        requestAnimationFrame(() => {
-            $$('.services-hero__text > *').forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            });
-        });
     }
 
     // Expose minimal API for debugging

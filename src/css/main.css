@@ -483,230 +483,80 @@ p {
     gap: 24px;
   }
 }
-/* footer section */
-.footer {
-  background: var(--bg-secondary);
-  padding: 60px 0 30px;
-  border-top: 1px solid var(--border);
-}
-.footer_grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 40px;
-}
-.logo_footer{
-  display: flex;
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-.footer_brand p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-.footer_brand img{
-  width: 250px;
-  height: auto;
-  transition: var(--transition);
-}
-.footer_brand img:hover{
-  transform: scale(1.1);
-}
-.footer__links h4 {
+
+
+/* Frosted glass surface — theme from CSS variables only */
+.glass-card {
   position: relative;
-  display: inline-block;
-  margin-bottom: 25px;
-  font-size: 18px;
-}
-.footer__links h4::after{
-  content: "";
-  position: absolute;
-  bottom:-7px;
-  left: 0;
-  width:80px;
-  height: 3px;
-  background: var(--gradient);
-}
-.footer__links h4::before{
-  content: "";
-  position: absolute;
-  bottom: -7px;
-  left: 0;
-  width: 8px;
-  height: 3px;
-  background:black;
-  z-index: 1;
-  animation: after 2s linear infinite;
-}
-@keyframes after{
-  0%{transform: translateX(-5px);}
-  50%{transform: translateX(30px);}
-  100%{transform: translateX(70px);}
-}
-.footer__links ul {
-  list-style: none;
-}
-.footer__links li {
-  margin-bottom: 12px;
-}
-.footer__links a {
-  color: var(--texy);
+  background: color-mix(in srgb, var(--surface) 38%, transparent);
+  backdrop-filter: blur(48px) saturate(118%);
+  -webkit-backdrop-filter: blur(48px) saturate(118%);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  border-radius: var(--radius-md);
   transition: var(--transition);
-  font-size: 14px;
-  text-decoration: none;
 }
-.footer__links a:hover {
-  color: var(--text-muted);
-  border-bottom: 2px dashed var(--primary);
+
+.glass-card:hover {
+  border-color: var(--border-hover);
 }
-.footer__contact{
-  margin-right:50px;
-}
-.footer__contact p {
-  margin-bottom: 12px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.footer__contact i {
-  color: var(--primary);
-  width: 20px;
-}
-.socials {
-  display: flex;
-  gap: 16px;
-}
-.socials a {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  background: var(--bg);
-  border-radius: 50%;
-  transition: var(--transition);
-  text-decoration: none;
-}
-.socials a:hover {
-  color:var(--text);
-  transform: translateY(-2px);
-}
-.socials img{
-  width: 30px;
-  height: 30px;
-  background: transparent;
-}
-.socials a:hover img{
-  color:var(--text);
-}
-.footer__bottom {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid var(--primary);
-}
-.footer__bottom p {
-  font-size: 13px;
-}
-/* scroll to top */
-.top{
-  background: var(--bg);
-  position: fixed;
-  bottom: 16px;
-  right: 32px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: var(--text);
-  text-decoration:none;
+
+/* Scroll reveal (use with IntersectionObserver → .reveal--visible) */
+.reveal {
   opacity: 0;
-  pointer-events: none;
-  box-shadow:1px 2px 2px var(--primary);
-  transition: var(--transition);
-  z-index: 999;
-  border: 2px solid var(--border-hover);
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.2, 0.9, 0.2, 1),
+    transform 0.65s cubic-bezier(0.2, 0.9, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
 }
-.top.active{
-  bottom: 32px;
-  pointer-events: auto;
+
+.reveal--visible {
   opacity: 1;
+  transform: translateY(0);
 }
-.top:hover{
-  transform: translateY(-7px);
-  background: var(--primary);
+
+.reveal-children > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
-/* small scren  */
-@media (max-width: 480px) {
 
-  .footer {
-    padding: 40px 15px;
-  }
-
-  .footer_grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: left;
-  }
-
-  .footer_brand img {
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
-  }
-
-  .footer__contact {
-    margin-right: 0;
-  }
-  .footer__contact p {
-    justify-content:left;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-  .footer__links h4::after
-   {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .footer__links h4::before{
-    left: 0;
-  }
+.reveal-children.reveal-children--visible > *:nth-child(1) {
+  transition-delay: 0s;
+  opacity: 1;
+  transform: translateY(0);
 }
-@media (max-width: 768px) {
-  .footer_grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: left;
-  }
-  .footer_brand img {
-    width: 100%;
-    max-width: 250px;
-  }
-  .socials {
-    justify-content: left;
-  }
-  .footer__contact {
-    margin-right: 0;
-  }
+.reveal-children.reveal-children--visible > *:nth-child(2) {
+  transition-delay: 0.08s;
+  opacity: 1;
+  transform: translateY(0);
 }
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  .footer_grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-  .footer__contact {
-    margin-right: 0;
-  }
+.reveal-children.reveal-children--visible > *:nth-child(3) {
+  transition-delay: 0.16s;
+  opacity: 1;
+  transform: translateY(0);
 }
-@media (min-width: 1025px) {
+.reveal-children.reveal-children--visible > *:nth-child(4) {
+  transition-delay: 0.24s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-children.reveal-children--visible > *:nth-child(5) {
+  transition-delay: 0.32s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-children.reveal-children--visible > *:nth-child(6) {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .footer_grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+/* Services carousel: icon contrast on gradient hover (theme-aware, not hardcoded in services.css) */
+:root.light .core-services__card:hover .core-services__card-icon svg {
+  stroke: var(--surface);
+}
+:root.dark .core-services__card:hover .core-services__card-icon svg {
+  stroke: var(--text);
 }

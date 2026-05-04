@@ -23,3 +23,33 @@ function toggleProjectDetail(btn) {
   btn.textContent = isExpanded ? "Hide Details" : "View Details";
   btn.setAttribute("aria-expanded", isExpanded);
 }
+
+// Why Choose Us Scroll Controls
+document.addEventListener("DOMContentLoaded", function () {
+  const leftButton = document.querySelector(".why-us-arrow.left");
+  const rightButton = document.querySelector(".why-us-arrow.right");
+  const list = document.querySelector(".why-us-list");
+
+  if (!leftButton || !rightButton || !list) {
+    return;
+  }
+
+  leftButton.addEventListener("click", function () {
+    scrollByCard(-1);
+  });
+
+  rightButton.addEventListener("click", function () {
+    scrollByCard(1);
+  });
+
+  function scrollByCard(direction) {
+    const cards = Array.from(list.querySelectorAll(".why-us-item"));
+    if (!cards.length) {
+      return;
+    }
+    const gap = parseInt(getComputedStyle(list).gap, 10) || 16;
+    const cardWidth = cards[0].offsetWidth + gap;
+    const nextScroll = list.scrollLeft + direction * cardWidth;
+    list.scrollTo({ left: nextScroll, behavior: "smooth" });
+  }
+});

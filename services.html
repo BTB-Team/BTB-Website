@@ -31,12 +31,12 @@
     </div>
       <nav class="navbar">
         <ul class="nav-menu" id="navMenu">
-          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="product.html" class="nav-link">Products</a></li>
           <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-          <li class="nav-item"><a href="Bolg.html" class="nav-link">Bolg</a></li>
+          <li class="nav-item"><a href="Bolg.html" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
@@ -72,7 +72,7 @@
     <canvas id="particles-canvas" aria-hidden="true"></canvas>
     <main>
         <!-- HERO -->
-        <section class="services-hero services-reveal" aria-labelledby="servicesHeroTitle">
+        <section class="services-hero reveal" aria-labelledby="servicesHeroTitle">
             <div class="services-hero__bg" aria-hidden="true">
                 <div class="services-hero__orb services-hero__orb--1"></div>
                 <div class="services-hero__orb services-hero__orb--2"></div>
@@ -80,7 +80,7 @@
             </div>
 
             <div class="container services-hero__content">
-                <div class="services-hero__text">
+                <div class="services-hero__text reveal-children">
                     <h1 id="servicesHeroTitle" class="services-hero__title">
                         <span class="gradient-text">Elevating Digital Excellence</span>
                     </h1>
@@ -98,29 +98,37 @@
                 </div>
 
                 <div class="services-hero__visual">
-                    <div class="services-hero__tech-core services-glass" aria-hidden="true">
-                        <div class="services-hero__core">
-                            <span class="services-hero__core-orbit services-hero__core-orbit--a"></span>
-                            <span class="services-hero__core-orbit services-hero__core-orbit--b"></span>
-                            <span class="services-hero__core-orbit services-hero__core-orbit--c"></span>
-                            <span class="services-hero__core-nucleus"></span>
-                        </div>
+                    <div class="services-hero__graphic" aria-hidden="true">
+                        <svg class="services-hero__motion" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                            <defs>
+                                <linearGradient id="svcHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--primary)"/>
+                                    <stop offset="100%" stop-color="var(--secondary)"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="120" cy="120" r="108" stroke="url(#svcHeroGrad)" stroke-width="1" opacity="0.35" fill="none"/>
+                            <g class="services-hero__motion-ring">
+                                <circle cx="120" cy="120" r="92" stroke="url(#svcHeroGrad)" stroke-width="1.5" opacity="0.5" fill="none" stroke-dasharray="12 18"/>
+                            </g>
+                            <g class="services-hero__motion-ring services-hero__motion-ring--reverse">
+                                <circle cx="120" cy="120" r="74" stroke="url(#svcHeroGrad)" stroke-width="1.25" opacity="0.65" fill="none" stroke-dasharray="8 14"/>
+                            </g>
+                            <circle class="services-hero__motion-core" cx="120" cy="120" r="8" fill="url(#svcHeroGrad)" opacity="0.95"/>
+                        </svg>
                     </div>
                 </div>
             </div>
-
-            
         </section>
 
         <!-- CORE SERVICES (Dynamic via JS) -->
-        <section id="core-services" class="core-services services-reveal" aria-labelledby="coreServicesTitle">
+        <section id="core-services" class="core-services reveal" aria-labelledby="coreServicesTitle">
             <div class="container">
-                <header class="core-services__header">
+                <header class="core-services__header reveal-children">
                     <h2 id="coreServicesTitle" class="core-services__title"><span class="gradient-text">Everything you need to launch, secure, and scale</span></h2>
                 </header>
 
                 <div class="core-services__slider-wrapper">
-                    <button class="core-services__nav core-services__nav--prev services-glass" type="button" aria-label="Previous services">
+                    <button class="core-services__nav core-services__nav--prev glass-card" type="button" aria-label="Previous services">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
                     </button>
 
@@ -128,7 +136,7 @@
                         <div id="servicesTrack" class="core-services__track" aria-live="polite"></div>
                     </div>
 
-                    <button class="core-services__nav core-services__nav--next services-glass" type="button" aria-label="Next services">
+                    <button class="core-services__nav core-services__nav--next glass-card" type="button" aria-label="Next services">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
                     </button>
                 </div>
@@ -137,14 +145,14 @@
         </section>
 
         <!-- SERVICES DETAILS -->
-        <section id="services-details" class="services-details services-reveal" aria-labelledby="servicesDetailsTitle">
+        <section id="services-details" class="services-details reveal" aria-labelledby="servicesDetailsTitle">
             <div class="container">
-                <header class="services-details__header">
+                <header class="services-details__header reveal-children">
                     <h2 id="servicesDetailsTitle" class="services-details__title"><span class="gradient-text">High-end execution, no compromises</span></h2>
                 </header>
 
                 <div class="services-details__list">
-                    <article class="service-detail">
+                    <article class="service-detail reveal">
                         <div class="service-detail__content">
                             <div class="service-detail__icon-wrap">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -158,7 +166,7 @@
                             </ul>
                         </div>
                         <div class="service-detail__visual">
-                            <div class="service-detail__code-block services-glass" role="img" aria-label="Code preview">
+                            <div class="service-detail__code-block glass-card" role="img" aria-label="Code preview">
                                 <div class="service-detail__code-header" aria-hidden="true"><span></span><span></span><span></span></div>
                                 <pre class="service-detail__code-body"><code>build("premium-ui")</code>
 <code>ship("fast")</code>
@@ -167,9 +175,9 @@
                         </div>
                     </article>
 
-                    <article class="service-detail service-detail--right">
+                    <article class="service-detail service-detail--right reveal">
                         <div class="service-detail__content">
-                            <div class="service-detail__icon-wrap service-detail__icon-wrap--purple">
+                            <div class="service-detail__icon-wrap">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                             </div>
                             <h3 class="service-detail__title">Cyber Security Training</h3>
@@ -189,9 +197,9 @@
                         </div>
                     </article>
 
-                    <article class="service-detail">
+                    <article class="service-detail reveal">
                         <div class="service-detail__content">
-                            <div class="service-detail__icon-wrap service-detail__icon-wrap--green">
+                            <div class="service-detail__icon-wrap">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                             </div>
                             <h3 class="service-detail__title">SEO Optimization</h3>
@@ -203,7 +211,7 @@
                             </ul>
                         </div>
                         <div class="service-detail__visual">
-                            <div class="service-detail__chart services-glass" aria-hidden="true">
+                            <div class="service-detail__chart glass-card" aria-hidden="true">
                                 <div class="service-detail__chart-bar" style="--h: 55%; --i: 1"><span>KW</span></div>
                                 <div class="service-detail__chart-bar" style="--h: 75%; --i: 2"><span>CTR</span></div>
                                 <div class="service-detail__chart-bar" style="--h: 95%; --i: 3"><span>ROI</span></div>
@@ -212,9 +220,9 @@
                         </div>
                     </article>
 
-                    <article class="service-detail service-detail--right">
+                    <article class="service-detail service-detail--right reveal">
                         <div class="service-detail__content">
-                            <div class="service-detail__icon-wrap service-detail__icon-wrap--orange">
+                            <div class="service-detail__icon-wrap">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
                             </div>
                             <h3 class="service-detail__title">Hosting & Domain</h3>
@@ -227,16 +235,16 @@
                         </div>
                         <div class="service-detail__visual">
                             <div class="service-detail__server-stack" aria-hidden="true">
-                                <div class="service-detail__server-item services-glass"><span class="service-detail__server-dot service-detail__server-dot--active"></span> Edge CDN</div>
-                                <div class="service-detail__server-item services-glass"><span class="service-detail__server-dot service-detail__server-dot--active"></span> Secure Hosting</div>
-                                <div class="service-detail__server-item services-glass"><span class="service-detail__server-dot"></span> Automated Backups</div>
+                                <div class="service-detail__server-item glass-card"><span class="service-detail__server-dot service-detail__server-dot--active"></span> Edge CDN</div>
+                                <div class="service-detail__server-item glass-card"><span class="service-detail__server-dot service-detail__server-dot--active"></span> Secure Hosting</div>
+                                <div class="service-detail__server-item glass-card"><span class="service-detail__server-dot"></span> Automated Backups</div>
                             </div>
                         </div>
                     </article>
 
-                    <article class="service-detail">
+                    <article class="service-detail reveal">
                         <div class="service-detail__content">
-                            <div class="service-detail__icon-wrap service-detail__icon-wrap--pink">
+                            <div class="service-detail__icon-wrap">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                             </div>
                             <h3 class="service-detail__title">Graphic & Video Editing</h3>
@@ -249,16 +257,16 @@
                         </div>
                         <div class="service-detail__visual">
                             <div class="service-detail__color-grid" aria-hidden="true">
-                                <div class="service-detail__color services-glass" style="--c: #2563EB"></div>
-                                <div class="service-detail__color services-glass" style="--c: #7C3AED"></div>
-                                <div class="service-detail__color services-glass" style="--c: #9333EA"></div>
+                                <div class="service-detail__color glass-card" style="background: var(--primary)"></div>
+                                <div class="service-detail__color glass-card" style="background: var(--secondary)"></div>
+                                <div class="service-detail__color glass-card" style="background: color-mix(in srgb, var(--secondary) 65%, var(--primary))"></div>
                             </div>
                         </div>
                     </article>
 
-                    <article class="service-detail service-detail--right">
+                    <article class="service-detail service-detail--right reveal">
                         <div class="service-detail__content">
-                            <div class="service-detail__icon-wrap service-detail__icon-wrap--red">
+                            <div class="service-detail__icon-wrap">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
                             </div>
                             <h3 class="service-detail__title">SEO Audit & Penetration Testing</h3>
@@ -285,9 +293,9 @@
         </section>
 
         <!-- HOW WE WORK -->
-        <section class="how-we-work services-reveal" aria-labelledby="howWeWorkTitle">
+        <section class="how-we-work reveal" aria-labelledby="howWeWorkTitle">
             <div class="container">
-                <header class="how-we-work__header">
+                <header class="how-we-work__header reveal-children">
                     <h2 id="howWeWorkTitle" class="how-we-work__title"><span class="gradient-text">A simple process. A premium outcome.</span></h2>
                 </header>
 
@@ -298,11 +306,11 @@
 
                     <div class="how-we-work__steps">
                         <div class="how-we-work__step">
-                            <div class="how-we-work__node services-glass" aria-hidden="true">
+                            <div class="how-we-work__node glass-card" aria-hidden="true">
                                 <span class="how-we-work__pulse" aria-hidden="true"></span>
                                 <span class="how-we-work__number">01</span>
                             </div>
-                            <div class="how-we-work__card services-glass">
+                            <div class="how-we-work__card glass-card">
                                 <h3 class="how-we-work__step-title">Discovery</h3>
                                 <p class="how-we-work__step-text">We align on goals, users, and constraints to define a winning system.</p>
                                 <div class="how-we-work__tags"><span>Strategy</span><span>Research</span><span>Scope</span></div>
@@ -310,11 +318,11 @@
                         </div>
 
                         <div class="how-we-work__step">
-                            <div class="how-we-work__node services-glass" aria-hidden="true">
+                            <div class="how-we-work__node glass-card" aria-hidden="true">
                                 <span class="how-we-work__pulse" aria-hidden="true"></span>
                                 <span class="how-we-work__number">02</span>
                             </div>
-                            <div class="how-we-work__card services-glass">
+                            <div class="how-we-work__card glass-card">
                                 <h3 class="how-we-work__step-title">Design</h3>
                                 <p class="how-we-work__step-text">We craft a premium UI system with strong hierarchy and conversion intent.</p>
                                 <div class="how-we-work__tags"><span>UX</span><span>UI</span><span>Prototype</span></div>
@@ -322,11 +330,11 @@
                         </div>
 
                         <div class="how-we-work__step">
-                            <div class="how-we-work__node services-glass" aria-hidden="true">
+                            <div class="how-we-work__node glass-card" aria-hidden="true">
                                 <span class="how-we-work__pulse" aria-hidden="true"></span>
                                 <span class="how-we-work__number">03</span>
                             </div>
-                            <div class="how-we-work__card services-glass">
+                            <div class="how-we-work__card glass-card">
                                 <h3 class="how-we-work__step-title">Build</h3>
                                 <p class="how-we-work__step-text">Engineering focused on performance, reliability, and clean maintainability.</p>
                                 <div class="how-we-work__tags"><span>Frontend</span><span>Backend</span><span>QA</span></div>
@@ -334,11 +342,11 @@
                         </div>
 
                         <div class="how-we-work__step">
-                            <div class="how-we-work__node services-glass" aria-hidden="true">
+                            <div class="how-we-work__node glass-card" aria-hidden="true">
                                 <span class="how-we-work__pulse" aria-hidden="true"></span>
                                 <span class="how-we-work__number">04</span>
                             </div>
-                            <div class="how-we-work__card services-glass">
+                            <div class="how-we-work__card glass-card">
                                 <h3 class="how-we-work__step-title">Launch & Optimize</h3>
                                 <p class="how-we-work__step-text">We ship, monitor, and iterate—so results compound over time.</p>
                                 <div class="how-we-work__tags"><span>Deploy</span><span>SEO</span><span>Growth</span></div>
@@ -350,15 +358,15 @@
         </section>
 
         <!-- PRICING / ENGAGEMENT MODEL -->
-        <section class="pricing-model services-reveal" aria-labelledby="pricingModelTitle">
+        <section class="pricing-model reveal" aria-labelledby="pricingModelTitle">
             <div class="container">
-                <header class="pricing-model__header">
+                <header class="pricing-model__header reveal-children">
                     <h2 id="pricingModelTitle" class="pricing-model__title"><span class="gradient-text">Flexible pricing that fits your mission</span></h2>
                     <p class="pricing-model__desc">Choose how you want to work—fast launches, ongoing growth, or deep technical hardening.</p>
                 </header>
 
                 <div class="pricing-model__grid">
-                    <article class="pricing-model__card services-glass">
+                    <article class="pricing-model__card glass-card reveal">
                         <div class="pricing-model__icon" aria-hidden="true">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2v20M2 12h20"/></svg>
                         </div>
@@ -372,7 +380,7 @@
                         <span class="pricing-model__badge">Best for launches</span>
                     </article>
 
-                    <article class="pricing-model__card pricing-model__card--highlight services-glass">
+                    <article class="pricing-model__card pricing-model__card--highlight glass-card reveal">
                         <div class="pricing-model__icon" aria-hidden="true">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg>
                         </div>
@@ -386,7 +394,7 @@
                         <span class="pricing-model__badge pricing-model__badge--purple">Most popular</span>
                     </article>
 
-                    <article class="pricing-model__card services-glass">
+                    <article class="pricing-model__card glass-card reveal">
                         <div class="pricing-model__icon" aria-hidden="true">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z"/></svg>
                         </div>
@@ -401,7 +409,7 @@
                     </article>
                 </div>
 
-                <div class="pricing-model__note services-glass" role="note">
+                <div class="pricing-model__note glass-card reveal" role="note">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                     Pricing is tailored to your scope and timeline. We’ll recommend the best model after a quick discovery call.
                 </div>
@@ -409,9 +417,9 @@
         </section>
 
         <!-- MINI CTA -->
-        <section class="mini-cta services-reveal" aria-labelledby="miniCtaTitle">
+        <section class="mini-cta reveal" aria-labelledby="miniCtaTitle">
             <div class="container">
-                <div class="mini-cta__box services-glass">
+                <div class="mini-cta__box glass-card">
                     <div class="mini-cta__content">
                         <h2 id="miniCtaTitle" class="mini-cta__title"><span class="gradient-text">Want to see what “premium” looks like?</span></h2>
                         <p class="mini-cta__text">Explore our portfolio and experience the craftsmanship across design, performance, and clarity.</p>
@@ -426,9 +434,9 @@
         </section>
 
         <!-- FINAL CTA -->
-        <section class="final-cta services-reveal" aria-labelledby="finalCtaTitle">
+        <section class="final-cta reveal" aria-labelledby="finalCtaTitle">
             <div class="container">
-                <div class="final-cta__wrapper services-glass">
+                <div class="final-cta__wrapper glass-card">
                     <div class="final-cta__bg" aria-hidden="true">
                         <div class="final-cta__orb final-cta__orb--1"></div>
                         <div class="final-cta__orb final-cta__orb--2"></div>
@@ -523,7 +531,5 @@
     
     <script src="src/js/main.js"></script>
     <script src="src/js/services.js"></script>
-<body>
-    
 </body>
 </html>

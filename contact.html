@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
- <meta name="description" content="BTB - Web development, cybersecurity training, SEO, hosting, graphic design, and security audits. Modern digital solutions for your business.">
-<meta name="keywords" content="web development, cybersecurity, SEO, hosting, graphic design, security audit">
-<meta name="author" content="BTB">
-<title>BTB | Contact </title>
-<link rel="shortcat icon" href="src/assets/image/BTB-logo.webp" type="image">
-<!-- googel font  -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- font  awesomw -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="src/css/main.css">
-    <link rel="stylesheet" href="src/css/contact.css">
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-
-    </head>
-<body class="contact-page">
-  <!--lodding-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="BTB - Contact us for web development, cybersecurity training, SEO, hosting, graphic design, and security audits.">
+  <meta name="keywords" content="BTB contact, web development, cybersecurity, SEO, hosting, graphic design, security audit">
+  <meta name="author" content="BTB">
+  <title>BTB | Contact Us – Beyond The Borders</title>
+  <link rel="shortcut icon" href="src/assets/image/BTB-logo.webp" type="image">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/contact.css">
+  <link rel="stylesheet" href="src/js/contact.js">
+ 
+</head>
+<body class="home-page">
+  <!-- Preloader -->
   <div class="preload" data-preaload>
     <div class="circle"></div>
     <p class="text">BTB</p>
   </div>
-  <!--nevbar section-->
+
+  <!-- Navbar -->
   <header class="header" id="mainHeader">
     <div class="container header__container">
-      <div class="logo-contact">
-      <img src="src/assets/image/BTB-logo.webp" >
-    </div>
+      <div class="logo">
+        <img src="src/assets/image/BTB-logo.webp" alt="image" width="auto" height="80px">
+      </div>
       <nav class="navbar">
         <ul class="nav-menu" id="navMenu">
-          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="product.html" class="nav-link">Products</a></li>
           <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
           <li class="nav-item"><a href="Bolg.html" class="nav-link">Bolg</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
           <span class="bar bar-1"></span>
@@ -48,146 +50,132 @@
         </div>
       </nav>
       <div class="dropdown">
-    <button class="dropbtn">
-      <i class="fas fa-cog"></i>
-    </button>
-
-    <div class="dropdown-menu">
-      <button id="systemMode">
-        <i class="fas fa-desktop"></i>
-        <span>System</span>
-      </button>
-
-      <button id="darkMode">
-        <i class="fas fa-moon"></i>
-        <span>Dark Mode</span>
-      </button>
-
-      <button id="lightMode">
-        <i class="fas fa-sun"></i>
-        <span>Light Mode</span>
-      </button>
-    </div>
-  </div>
+        <button class="dropbtn"><i class="fas fa-cog"></i></button>
+        <div class="dropdown-menu">
+          <button id="systemMode"><i class="fas fa-desktop"></i><span>System</span></button>
+          <button id="darkMode"><i class="fas fa-moon"></i><span>Dark Mode</span></button>
+          <button id="lightMode"><i class="fas fa-sun"></i><span>Light Mode</span></button>
+        </div>
+      </div>
     </div>
   </header>
-    <div class="glow-cursor" id="contactGlowCursor"></div>
-    <canvas id="contactParticles"></canvas>
 
-    <div class="relative z-10 w-full min-h-screen flex flex-col" id="contactMainWrap">
-        <div class="flex items-center justify-end p-4 gap-3 fade-up">
-                <!-- <i data-lucide="moon" style="width:16px;height:16px;" class="opacity-50"></i> -->
-            <!-- <div class="toggle-btn" id="contactThemeToggle" role="switch" aria-label="Toggle light and dark mode" tabindex="0">
-                <div class="dot"></div>
-            </div> -->
-                <!-- <i data-lucide="sun" style="width:16px;height:16px;" class="opacity-50"></i> -->
+  <!-- Main Content -->
+  <main class="contact-page-main">
+    <section class="contact-hero-section">
+      <div class="container">
+        <h1 class="gradient-text">Get in <span style="background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;">Touch</span></h1>
+        <p>Have a project in mind? Let's discuss how BTB can help you grow.</p>
+      </div>
+    </section>
 
+    <!-- Contact Info Cards -->
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Visit Us</h3>
+          <p>Phase 2 Town, Kabul, Afghanistan</p>
         </div>
-        <section class="text-center px-6 pt-8 pb-12 fade-up fade-up-d1">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                <span class="typewriter-wrap bg-gradient-to-r from-[#00f0ff] to-[#7b61ff] bg-clip-text text-transparent">CONTACT US</span>
-            </h1>
-            <p class="text-base md:text-lg opacity-50 max-w-lg mx-auto">Let's build something extraordinary together</p>
-        </section>
-
-        <section class="px-6 max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 fade-up fade-up-d2">
-            <div class="info-card glass rounded-2xl p-6 text-center">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background:rgba(0,240,255,0.1);">
-                    <i data-lucide="mail" style="width:22px;height:22px;color:#00f0ff;"></i>
-                </div>
-                <p class="text-sm opacity-40 mb-1">Email</p>
-                <p class="font-medium text-sm">hello@yourdomain.com</p>
-            </div>
-
-            <div class="info-card glass rounded-2xl p-6 text-center">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background:rgba(123,97,255,0.1);">
-                    <i data-lucide="phone" style="width:22px;height:22px;color:#7b61ff;"></i>
-                </div>
-                <p class="text-sm opacity-40 mb-1">Phone</p>
-                <p class="font-medium text-sm">+93 76 7423806</p>
-            </div>
-
-            <div class="info-card glass rounded-2xl p-6 text-center">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background:rgba(255,77,106,0.1);">
-                    <i data-lucide="map-pin" style="width:22px;height:22px;color:#ff4d6a;"></i>
-                </div>
-                <p class="text-sm opacity-40 mb-1">Location</p>
-                <p class="font-medium text-sm">AF, Kabul</p>
-            </div>
-        </section>
-
-        <section class="px-6 max-w-2xl mx-auto w-full mb-16 fade-up fade-up-d3">
-            <div class="glass-strong rounded-3xl p-8 relative" id="contactFormCard">
-                <form id="contactForm" novalidate autocomplete="on">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                        <div class="float-field">
-                            <input type="text" id="contactName" name="name" placeholder=" " autocomplete="name" required>
-                            <label for="contactName">Name</label>
-                            <div class="err-msg" id="contactNameErr"></div>
-                        </div>
-                        <div class="float-field">
-                            <input type="email" id="contactEmail" name="email" placeholder=" " autocomplete="email" required>
-                            <label for="contactEmail">Email</label>
-                            <div class="err-msg" id="contactEmailErr"></div>
-                        </div>
-                    </div>
-
-                    <div class="float-field mb-5">
-                        <input type="text" id="contactSubject" name="subject" placeholder=" " required>
-                        <label for="contactSubject">Subject</label>
-                        <div class="err-msg" id="contactSubjectErr"></div>
-                    </div>
-
-                    <div class="float-field mb-6">
-                        <textarea id="contactMessage" name="message" rows="5" placeholder=" " required style="resize:vertical;min-height:100px;"></textarea>
-                        <label for="contactMessage">Message</label>
-                        <div class="err-msg" id="contactMessageErr"></div>
-                    </div>
-
-                    <button type="submit" class="send-btn w-full" id="contactSendBtn">
-                        <span class="btn-text flex items-center justify-center gap-2">
-                            <i data-lucide="send" style="width:18px;height:18px;"></i>
-                            Send Message
-                        </span>
-                        <div class="spinner"></div>
-                    </button>
-                </form>
-
-                <div class="success-overlay" id="contactSuccessOverlay">
-                    <div class="check-circle w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#00f0ff,#7b61ff);">
-                        <i data-lucide="check" style="width:32px;height:32px;color:#0a0a1a;stroke-width:3;"></i>
-                    </div>
-                    <p class="text-xl font-semibold mb-1">Message Sent!</p>
-                    <p class="text-sm opacity-50">Thanks, I'll get back to you soon.</p>
-                    <button class="mt-6 text-sm px-5 py-2 rounded-lg" id="contactResetBtn">Send Another</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="px-6 max-w-3xl mx-auto w-full text-center mb-12 fade-up fade-up-d4">
-            <h2 class="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-[#00f0ff] to-[#7b61ff] bg-clip-text text-transparent">Let's Work Together</h2>
-            <p class="opacity-50 max-w-md mx-auto mb-6">Have a project in mind? I'd love to hear about it.</p>
-            <div class="flex justify-center gap-3">
-                <a href="#" class="social-icon" aria-label="GitHub"><i data-lucide="github" style="width:20px;height:20px;"></i></a>
-                <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter" style="width:20px;height:20px;"></i></a>
-                <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:20px;height:20px;"></i></a>
-                <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram" style="width:20px;height:20px;"></i></a>
-            </div>
-        </section>
-<<<<<<< HEAD
-=======
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>Call Us</h3>
+          <p><a href="tel:+93772940551">+93 77 294 0551</a><br><a href="tel:+93767423806">+93 76 742 3806</a></p>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email Us</h3>
+          <p><a href="mailto:btbteam.org">btbteam.org</a></p>
+        </div>
+      </div>
     </div>
->>>>>>> susansultani-contact-page
-    <!-- footer section -->
+
+    <!-- Contact Form -->
+    <div class="container">
+      <div class="form-container">
+        <h2 class="gradient-text">Send us a <span style="background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;">Message</span></h2>
+        <form id="contactForm" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName"><i class="fas fa-user"></i> Full Name <span style="color:#ef4444;">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="John Doe">
+              <div class="error-msg" id="nameError"></div>
+            </div>
+            <div class="form-group">
+              <label for="emailAddress"><i class="fas fa-envelope"></i> Email Address <span style="color:#ef4444;">*</span></label>
+              <input type="email" id="emailAddress" name="emailAddress" placeholder="hello@example.com">
+              <div class="error-msg" id="emailError"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phoneNumber"><i class="fas fa-phone"></i> Phone Number</label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+93 XX XXX XXXX">
+              <div class="error-msg" id="phoneError"></div>
+            </div>
+            <div class="form-group">
+              <label for="serviceInterest"><i class="fas fa-cogs"></i> Service Interest</label>
+              <select id="serviceInterest" name="serviceInterest">
+                <option value="">Select a service</option>
+                <option value="web-development">Web Development</option>
+                <option value="cybersecurity">Cybersecurity Training</option>
+                <option value="seo">SEO & Digital Growth</option>
+                <option value="hosting">Hosting & Domains</option>
+                <option value="graphic-design">Graphic Design</option>
+                <option value="security-audit">Security Audit</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error-msg" id="serviceError"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject"><i class="fas fa-tag"></i> Subject <span style="color:#ef4444;">*</span></label>
+            <input type="text" id="subject" name="subject" placeholder="How can we help you?">
+            <div class="error-msg" id="subjectError"></div>
+          </div>
+          <div class="form-group">
+            <label for="message"><i class="fas fa-comment-dots"></i> Message <span style="color:#ef4444;">*</span></label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..."></textarea>
+            <div class="error-msg" id="messageError"></div>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message
+          </button>
+          <div id="formStatus"></div>
+        </form>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-glow-section">
+        <div class="stylish-cta">
+          <div class="cta-particles">
+            <div class="particle" style="width: 6px; height: 6px; left: 10%; animation-duration: 6s;"></div>
+            <div class="particle" style="width: 4px; height: 4px; left: 25%; animation-duration: 8s; animation-delay: 1s;"></div>
+            <div class="particle" style="width: 8px; height: 8px; left: 45%; animation-duration: 7s; animation-delay: 0.5s;"></div>
+            <div class="particle" style="width: 5px; height: 5px; left: 65%; animation-duration: 9s; animation-delay: 2s;"></div>
+            <div class="particle" style="width: 7px; height: 7px; left: 80%; animation-duration: 6.5s; animation-delay: 1.5s;"></div>
+          </div>
+          <div class="cta-icon-wrapper"><i class="fas fa-users"></i></div>
+          <h3>Let's Create Something Amazing</h3>
+          <p>Discover the story, mission, and vision behind BTB — and why we're the right partner for your digital journey.</p>
+          <a href="#" class="cta-magnetic-btn">
+            <span>Discover Our Story</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer_grid">
         <div class="footer_brand">
           <div class="logo logo_footer">BTB</div>
           <p>Empowering businesses with next‑gen tech, cybersecurity & creative solutions.</p>
-          <img src="src/assets/image/office01.webp">
+          <img src="src/assets/image/office01.webp" alt="BTB office">
         </div>
-        
         <div class="footer__links">
           <h4>Explore</h4>
           <ul>
@@ -199,7 +187,6 @@
             <li><a href="bolg.html">bolg</a></li>
           </ul>
         </div>
-        
         <div class="footer__links">
           <h4>Services</h4>
           <ul>
@@ -209,51 +196,27 @@
             <li><a href="services.html">Hosting & Domains</a></li>
           </ul>
         </div>
-        
         <div class="footer__contact">
-          <div class="footer__links">
-            <h4>Contact</h4>
-          </div>
-          <p>
-            <i class="fas fa-envelope"></i> 
-            btbteam.org
-          </p>
-          <p>
-            <i class="fas fa-phone-alt"></i> 
-            +93 77 294 0551 <br>
-            +93 76 742 3806
-          </p>
-          <p>
-            <i class="fas fa-map-marker-alt"></i> 
-            Phase 2 Town, Kabul, Afghanistan
-          </p>
+          <div class="footer__links"><h4>Contact</h4></div>
+          <p><i class="fas fa-envelope"></i> btbteam.org</p>
+          <p><i class="fas fa-phone-alt"></i> +93 77 294 0551 <br> +93 76 742 3806</p>
+          <p><i class="fas fa-map-marker-alt"></i> Phase 2 Town, Kabul, Afghanistan</p>
           <div class="socials">
-            <a href="#" aria-label="facebook">
-              <img src="src/assets/icon/facebook.svg" alt="">
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <img src="src/assets/icon/linkedin.svg" alt="">
-            </a>
-            <a href="#" aria-label="GitHub">
-              <img src="src/assets/icon/github(1).svg" alt="">
-            </a>
-            <a href="#" aria-label="telegram">
-              <img src="src/assets/icon/telegram.svg" alt="">
-            </a>
-          </div>
+            <a href="#" aria-label="facebook"><img src="src/assets/icon/facebook.svg" alt="facebook"></a>
+            <a href="#" aria-label="LinkedIn"><img src="src/assets/icon/linkedin.svg" alt="linkedin"></a>
+            <a href="#" aria-label="GitHub"><img src="src/assets/icon/github(1).svg" alt="github"></a>
+            <a href="#" aria-label="telegram"><img src="src/assets/icon/telegram.svg" alt="telegram"></a>
           </div>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 BTB — Built with performance & clean code. All rights reserved.</p>
-      </div>
+      <div class="footer__bottom"><p>&copy; 2026 BTB — Built with performance & clean code. All rights reserved.</p></div>
     </div>
   </footer>
-  <!-- to top -->
-   <a href="#" class="top">
-    <i class="fa-solid fa-arrow-up"></i>
- </a>
- <script src="src/js/main.js"></script>
- <script src="src/js/contact.js"></script>
+
+  <a href="#" class="top" id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <script src="src/js/main.js" defer></script>
+
+  
 </body>
 </html>

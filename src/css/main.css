@@ -690,22 +690,12 @@ p {
     justify-content: left;
     flex-wrap: wrap;
     text-align: center;
-<<<<<<< HEAD
   }
   .footer__links h4::after {
     left: 50%;
     transform: translateX(-50%);
   }
   .footer__links h4::before {
-=======
-}
-  .footer__links h4::after
-   {
-    left: 50%;
-    transform: translateX(-50%);
-}
-  .footer__links h4::before{
->>>>>>> 62f0c85fca89feff9bb64659dcfb9914d86f5c3b
     left: 0;
   }
 }

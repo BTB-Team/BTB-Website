@@ -1,13 +1,6 @@
 /* ============================================
   0. GLOBAL PAGE UTILITIES (Scoped)
  */
-
-.service-page main,
-.service-page #mainHeader {
-  position: relative;
-  z-index: 1;
-}
-
 #particles-canvas {
   position: fixed;
   inset: 0;

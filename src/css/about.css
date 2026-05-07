@@ -606,7 +606,7 @@ a {
 .about-hero {
   margin: 0;
   width: 100%;
-  padding-top: 22rem;
+  padding:200px auto;
   background:
     linear-gradient(90deg, #404040c1 0%, #40404097 0%),
     url(../assets/images/about-hero-bg.webp) no-repeat center / cover;
@@ -625,6 +625,7 @@ a {
 
 .about-hero .row {
   align-items: center;
+  padding-top: 100px;
 }
 
 .about-intro .section-subtitle,

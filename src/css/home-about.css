@@ -5,7 +5,7 @@
 }
 .why-us_grid {
   display: grid;
-  grid-template-columns:repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 60px;
   align-items: center;
 }
@@ -31,10 +31,164 @@
   color: var(--text-muted);
   font-size: 20px;
 }
-.about-img{
+.about-img {
   position: relative;
 }
+/* this section for the testimonial section */
+.testimonial {
+  background: var(--bg);
+  padding: 120px auto;
+}
+.TML {
+  padding: 60px;
+}
+.TML-header {
+  padding-top: 120px;
+  text-align: center;
+  justify-content: center;
+}
+.TML-header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+}
+.tml-grid {
+  padding: 40px 0 60px 0;
+}
+.tml-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: var(--space-lg);
+  transition: var(--transition);
+}
+.tml-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.15);
+}
+.tml-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.tml-card .text {
+  font-size: 14px;
+  margin: 10px auto;
+  color: var(--text-muted);
+}
+.TML-footer {
+  border-top: 2px dashed var(--border);
+  padding: 7px;
+}
+.TML-footer .stars {
+  color: #f0df45;
+}
+/*this section for the F&Q */
+.faq-section h2 {
+  text-align: left;
+  margin: 20px auto;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+.faq {
+  background: var(--surface);
+}
+.search-box {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 3px 4px 6px rgb(58, 57, 57);
+}
+.faq-item {
+  background: var(--bg);
+  backdrop-filter: blur(10px);
+  margin-bottom: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: 3px 4px 6px rgb(58, 57, 57);
+}
+.faq-question {
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.faq-icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  transition: var(--transition);
+}
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  height: 0;
+  overflow: hidden;
+  padding: 2px 15px;
+  transition: var(--transition);
+  font-size: 14px;
+}
+/* Responsive Design */
 @media (max-width: 480px) {
+  .testimonial {
+    padding: 50px 10px;
+  }
+
+  .TML {
+    padding: 10px;
+  }
+
+  .TML-header h2 {
+    font-size: 20px;
+  }
+
+  .tml-card {
+    border-radius: 16px;
+  }
+
+  .tml-card img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tml-card .text {
+    font-size: 12px;
+  }
+  .faq-grid img {
+    max-width: 220px;
+  }
+
+  .faq {
+    padding: 10px;
+  }
+
+  .faq-item {
+    border-radius: 10px;
+  }
+
+  .faq-question {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .faq-answer {
+    font-size: 12px;
+  }
   .why-us {
     padding: 40px 12px;
   }
@@ -58,7 +212,7 @@
     justify-content: left;
   }
 
-  .check-list li { 
+  .check-list li {
     gap: 8px;
     font-size: 10px;
   }
@@ -81,7 +235,6 @@
   }
 }
 @media (max-width: 768px) {
-
   .why-us_grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -95,21 +248,49 @@
   .about-img {
     margin-top: 20px;
   }
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .faq-grid img {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
+  }
+  .faq {
+    padding: 15px;
+  }
+
+  .faq-item {
+    margin-bottom: 8px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .faq-answer {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .search-box {
+    padding: 10px;
+    font-size: 13px;
+  }
 }
 @media (min-width: 769px) and (max-width: 991px) {
-
   .why-us_grid {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
   }
-
   .check-list li {
     justify-content: center;
   }
 }
 @media (min-width: 992px) {
-
   .why-us_grid {
     grid-template-columns: repeat(2, 1fr);
   }

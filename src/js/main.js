@@ -5,7 +5,6 @@ window.addEventListener("load", function () {
   document.body.classList.add("loaded");
 });
 
-
 // light and dark mode
 const dropdown = document.querySelector(".dropdown");
 const btn = document.querySelector(".dropbtn");
@@ -47,7 +46,7 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
 });
-navLinks.forEach(link => {
+navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
@@ -56,7 +55,7 @@ navLinks.forEach(link => {
 
 // active link
 const currentPage = window.location.pathname.split("/").pop();
-navLinks.forEach(link => {
+navLinks.forEach((link) => {
   const linkPage = link.getAttribute("href");
   link.classList.remove("active");
   if (linkPage === currentPage) {
@@ -68,10 +67,10 @@ navLinks.forEach(link => {
 });
 
 // hedar scrolled
-const header = document.getElementById('mainHeader');
+const header = document.getElementById("mainHeader");
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
   if (currentScroll <= 0) {
     header.classList.remove("hide");
@@ -88,17 +87,15 @@ window.addEventListener('scroll', () => {
 //this section for the scroll to top
 const toTop = document.querySelector(".top");
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 100){
+  if (window.pageYOffset > 100) {
     toTop.classList.add("active");
-  }
-  else{
-    toTop.classList.remove("active")
+  } else {
+    toTop.classList.remove("active");
   }
 });
 
-
-// this style for the home page sectioon 
-document.addEventListener('DOMContentLoaded', () => {
+// this style for the home page sectioon
+document.addEventListener("DOMContentLoaded", () => {
   animateNumbers();
   heroScrollEffect();
   productSlider();
@@ -107,45 +104,48 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // Animated counters
 const animateNumbers = () => {
-  const statNumbers = document.querySelectorAll('.stat__number, .stat-digit');
+  const statNumbers = document.querySelectorAll(".stat__number, .stat-digit");
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-      const element = entry.target;
-      const rawValue = element.innerText;
-      const value = parseInt(rawValue.replace(/\D/g, ''));
+        const element = entry.target;
+        const rawValue = element.innerText;
+        const value = parseInt(rawValue.replace(/\D/g, ""));
 
-      if (isNaN(value) || element.hasAttribute('data-animated')) return;
+        if (isNaN(value) || element.hasAttribute("data-animated")) return;
 
-      element.setAttribute('data-animated', 'true');
+        element.setAttribute("data-animated", "true");
 
-      let current = 0;
-      const increment = value / 50;
+        let current = 0;
+        const increment = value / 50;
 
-      const timer = setInterval(() => {
-        current += increment;
+        const timer = setInterval(() => {
+          current += increment;
 
-        if (current >= value) {
-          element.innerText = rawValue;
-          clearInterval(timer);
-        } else {
-          element.innerText = Math.floor(current);
-        }
-      }, 20);
-    });
-  }, { threshold: 0.3 });
+          if (current >= value) {
+            element.innerText = rawValue;
+            clearInterval(timer);
+          } else {
+            element.innerText = Math.floor(current);
+          }
+        }, 20);
+      });
+    },
+    { threshold: 0.3 },
+  );
 
-  statNumbers.forEach(num => observer.observe(num));
+  statNumbers.forEach((num) => observer.observe(num));
 };
 
 // hero section when scroll
 const heroScrollEffect = () => {
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector(".hero");
   if (!hero) return;
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const scrolled = window.pageYOffset;
 
     hero.style.transform = `translateY(${scrolled * 0.2}px)`;
@@ -153,30 +153,28 @@ const heroScrollEffect = () => {
   });
 };
 
-
 // prodect slider
 const productSlider = () => {
-  const sliderProdect = document.querySelector('.product-image-slider');
+  const sliderProdect = document.querySelector(".product-image-slider");
   if (!sliderProdect) return;
 
   const cardsProdect = sliderProdect.innerHTML;
   sliderProdect.innerHTML += cardsProdect;
 
-  const cardsPD = document.querySelectorAll('.card-service');
+  const cardsPD = document.querySelectorAll(".card-service");
 
-  cardsPD.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.classList.add('flip');
+  cardsPD.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.classList.add("flip");
     });
 
-    card.addEventListener('mouseleave', () => {
+    card.addEventListener("mouseleave", () => {
       setTimeout(() => {
-        card.classList.remove('flip');
+        card.classList.remove("flip");
       }, 300);
     });
   });
 };
-
 
 // protfolio slider
 const portfolioSlider = () => {
@@ -196,11 +194,11 @@ const portfolioSlider = () => {
     const perView = getCardsPerView();
     const slidesArr = Array.from(allSlides);
 
-    slidesArr.slice(-perView).forEach(el => {
+    slidesArr.slice(-perView).forEach((el) => {
       slides.insertBefore(el.cloneNode(true), slides.firstChild);
     });
 
-    slidesArr.slice(0, perView).forEach(el => {
+    slidesArr.slice(0, perView).forEach((el) => {
       slides.appendChild(el.cloneNode(true));
     });
 
@@ -269,25 +267,54 @@ const portfolioSlider = () => {
   });
 };
 
-
 // Lazy load image
 const lazyLoadImage = () => {
-  if (!('IntersectionObserver' in window)) return;
+  if (!("IntersectionObserver" in window)) return;
 
-  const lazyImages = document.querySelectorAll('img[data-src]');
+  const lazyImages = document.querySelectorAll("img[data-src]");
   if (!lazyImages.length) return;
 
   const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
 
       const img = entry.target;
       img.src = img.dataset.src;
 
-      img.removeAttribute('data-src');
+      img.removeAttribute("data-src");
       imageObserver.unobserve(img);
     });
   });
 
-  lazyImages.forEach(img => imageObserver.observe(img));
+  lazyImages.forEach((img) => imageObserver.observe(img));
 };
+// faq section
+const items = document.querySelectorAll(".faq-item");
+const search = document.querySelector(".search-box");
+items.forEach((item) => {
+  const question = item.querySelector(".faq-question");
+  const answer = item.querySelector(".faq-answer");
+
+  question.addEventListener("click", () => {
+    item.classList.toggle("active");
+
+    if (item.classList.contains("active")) {
+      answer.style.height = answer.scrollHeight + "px";
+    } else {
+      answer.style.height = "0px";
+    }
+  });
+});
+search.addEventListener("input", () => {
+  const value = search.value.toLowerCase();
+
+  items.forEach((item) => {
+    const text = item.innerText.toLowerCase();
+
+    if (text.includes(value)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});

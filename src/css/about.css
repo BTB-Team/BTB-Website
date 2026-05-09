@@ -1,4 +1,9 @@
-.container {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.about-container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -8,9 +13,7 @@
 }
 
 /* 
-
 - Grid System
-
 */
 
 .row {
@@ -19,7 +22,6 @@
   margin-right: -15px;
   margin-left: -15px;
 }
-
 .row > * {
   padding-right: 15px;
   padding-left: 15px;
@@ -94,7 +96,7 @@
 /* sm */
 
 @media (min-width: 576px) {
-  .container {
+  .about-container {
     width: 540px;
   }
   .col-sm-1 {
@@ -150,7 +152,7 @@
 /* md */
 
 @media (min-width: 768px) {
-  .container {
+  .about-container {
     width: 720px;
   }
   .col-md-1 {
@@ -206,7 +208,7 @@
 /* lg */
 
 @media (min-width: 992px) {
-  .container {
+  .about-container {
     width: 960px;
   }
   .col-lg-1 {
@@ -262,7 +264,7 @@
 /* xl */
 
 @media (min-width: 1200px) {
-  .container {
+  .about-container {
     width: 1140px;
   }
   .col-xl-1 {
@@ -318,7 +320,7 @@
 /* xxl */
 
 @media (min-width: 1400px) {
-  .container {
+  .about-container {
     width: 1370px;
   }
   .col-xxl-1 {
@@ -370,14 +372,7 @@
     flex: 0 0 auto;
   }
 }
-
-/* /////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////// */
 /* Grid System Codes */
-/* /////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////// */
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -388,16 +383,15 @@ html {
   -o-transition: var(--transition);
 }
 
-img,
-svg {
+img{
   width: 100%;
 }
 
-body {
+/* body {
   font-size: 1.6rem;
   position: relative;
   text-transform: capita;
-}
+} */
 
 /* Light Theme Styles */
 /* //////////////////////////////////////// */
@@ -586,9 +580,12 @@ body.dark::before {
 .services-content__title,
 .info-content__title,
 .why-list__title {
-  color: var(--primary);
+  color: var(--text);
 }
-
+.services-content__caption{
+  font-size: 16px;
+  color: var(--text);
+}
 .section-title span {
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -635,15 +632,12 @@ a {
 
 .hero-title {
   font-size: 6rem;
-  color: #fff;
 }
 
-.hero-title span {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
+/* .hero-title span {
+ color: var(--primary);
+ background-color: var(--primary);
+} */
 .hero__items {
   display: flex;
   flex-direction: column;
@@ -652,6 +646,7 @@ a {
 .hero-caption {
   margin-top: 2rem;
   margin-bottom: 4rem;
+  font-size: 20px;
 }
 
 .hero-btn__box {
@@ -867,6 +862,7 @@ a {
 
 .intro-content__caption {
   margin: 2rem 0;
+  font-size: 20px;
 }
 
 .intro-info__box {
@@ -904,7 +900,9 @@ a {
 .info-content__title {
   font-size: 2.2rem;
 }
-
+.info-content__caption{
+  font-size: 16px;
+}
 /* about services */
 /* /////////////////////////////// */
 
@@ -1031,7 +1029,7 @@ a {
   height: 100%;
 }
 
-.about-why .container {
+.about-why .about-container {
   z-index: 2;
 }
 
@@ -1089,6 +1087,7 @@ a {
   -ms-transition: var(--transition);
   -o-transition: var(--transition);
   margin-top: 2rem;
+  font-size: 20px;
 }
 
 .why-list__caption--active {
@@ -1117,7 +1116,11 @@ a {
   flex-direction: column;
   height: 17rem;
 }
-
+.about-achievement__item:hover{
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.15);
+}
 .about-achievement__head {
   gap: 2rem;
   margin-bottom: 2rem;
@@ -1157,6 +1160,7 @@ a {
   padding: 3rem 4rem;
   min-height: 30rem;
   gap: 1rem;
+  font-size: 16px;
 }
 
 .team-member .btn {
@@ -1240,15 +1244,8 @@ a {
 .about-contactus__text span {
   color: var(--text);
 }
-
-/* ////////////////////////////// */
-
 /* Media querreys */
-/* //////////////////////////////////////////////////////////////////// */
-
 /* large screens */
-/* /////////////////////////////// */
-
 @media (max-width: 1400px) {
 }
 /* computers screen */
@@ -1281,7 +1278,6 @@ a {
   }
 }
 /* lagre mobiles  */
-/* /////////////////////////////// */
 @media (max-width: 768px) {
   * {
     cursor: default;
@@ -1306,15 +1302,12 @@ a {
   .section-mini__title {
     font-size: 1.8rem;
   }
-
   .services-content__btn {
     position: absolute;
     overflow: hidden;
     opacity: 0;
     margin-top: 2rem;
   }
-
-
   .services-content__btn{
     opacity: 1;
     visibility: visible;
@@ -1324,9 +1317,11 @@ a {
     padding: 4rem 2.5rem;
     margin-top: -7rem !important;
   }
-
   .team-member {
     flex: 0 0 100%;
+  }
+  .why-list__caption{
+    font-size: 16px;
   }
 }
 

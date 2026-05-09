@@ -33,10 +33,6 @@ document.getElementById("lightMode").onclick = () => {
   root.classList.add("light");
   localStorage.setItem("theme", "light");
 };
-document.getElementById("systemMode").onclick = () => {
-  root.classList.remove("dark", "light");
-  localStorage.removeItem("theme");
-};
 // Navbar and humburger menu
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
@@ -85,14 +81,22 @@ window.addEventListener("scroll", () => {
 });
 
 //this section for the scroll to top
-const toTop = document.querySelector(".top");
+const toTop = document.querySelector(".to-top");
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 100) {
-    toTop.classList.add("active");
-  } else {
-    toTop.classList.remove("active");
-  }
+    if (window.scrollY > 100) {
+      toTop.classList.add("active");
+    } else {
+      toTop.classList.remove("active");
+    }
 });
+toTop.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
 
 // this style for the home page sectioon
 document.addEventListener("DOMContentLoaded", () => {
@@ -288,32 +292,32 @@ const lazyLoadImage = () => {
   lazyImages.forEach((img) => imageObserver.observe(img));
 };
 // faq section
-const items = document.querySelectorAll(".faq-item");
-const search = document.querySelector(".search-box");
-items.forEach((item) => {
-  const question = item.querySelector(".faq-question");
-  const answer = item.querySelector(".faq-answer");
+// const items = document.querySelectorAll(".faq-item");
+// const search = document.querySelector(".search-box");
+// items.forEach((item) => {
+//   const question = item.querySelector(".faq-question");
+//   const answer = item.querySelector(".faq-answer");
 
-  question.addEventListener("click", () => {
-    item.classList.toggle("active");
+//   question.addEventListener("click", () => {
+//     item.classList.toggle("active");
 
-    if (item.classList.contains("active")) {
-      answer.style.height = answer.scrollHeight + "px";
-    } else {
-      answer.style.height = "0px";
-    }
-  });
-});
-search.addEventListener("input", () => {
-  const value = search.value.toLowerCase();
+//     if (item.classList.contains("active")) {
+//       answer.style.height = answer.scrollHeight + "px";
+//     } else {
+//       answer.style.height = "0px";
+//     }
+//   });
+// });
+// search.addEventListener("input", () => {
+//   const value = search.value.toLowerCase();
 
-  items.forEach((item) => {
-    const text = item.innerText.toLowerCase();
+//   items.forEach((item) => {
+//     const text = item.innerText.toLowerCase();
 
-    if (text.includes(value)) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
-  });
-});
+//     if (text.includes(value)) {
+//       item.style.display = "block";
+//     } else {
+//       item.style.display = "none";
+//     }
+//   });
+// });

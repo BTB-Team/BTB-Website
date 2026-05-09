@@ -5,7 +5,12 @@ main {
   max-width: 1200px;
   margin: 0 auto;
 }
-
+@media (min-width: 768px){
+  .why-us-item svg{
+    width: 40px;
+    height: 40px;
+  }
+}
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
@@ -681,6 +686,7 @@ figure.service-media img {
     font-size: 1.8rem;
   }
   .hero-features {
+    grid-template-columns: repeat(1, 300px);
     gap: 0.8rem;
     margin: 1.5rem auto 0;
     align-items: stretch;
@@ -688,11 +694,16 @@ figure.service-media img {
   .feature-creative {
     padding: 1rem;
     min-height: 140px;
+    text-align: center;
   }
   .feature-icon-wrap {
     width: 40px;
     height: 40px;
     font-size: 1.1rem;
+  }
+  .feature-icon-wrap svg{
+    width: 24px;
+    height: 24px;
   }
   .feature-creative h4 {
     font-size: 0.95rem;

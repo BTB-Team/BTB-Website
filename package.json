@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.1"
+  },
+  "devDependencies": {
+    "cssnano": "^8.0.1",
+    "terser": "^5.47.1"
   }
 }

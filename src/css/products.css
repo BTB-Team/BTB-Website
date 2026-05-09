@@ -12,7 +12,7 @@
    BACKGROUND  (stars canvas + glow orbs)
 ────────────────────────────────────────────────────────────── */
 
-#starsCanvas {
+/* #starsCanvas {
   position: fixed;
   inset: 0;
   z-index: 0;
@@ -27,8 +27,8 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-}
-
+} */
+/* 
 .bg-glows__orb {
   position: absolute;
   border-radius: 50%;
@@ -71,9 +71,10 @@
     transparent 70%
   );
   filter: blur(60px);
-}
+} */
+
 /* Outline button variant */
-.btn--outline {
+ .btn--outline {
   background: transparent;
   color: var(--secondary);
   border: 1.5px solid rgba(124, 58, 237, 0.4);
@@ -84,7 +85,7 @@
   background: rgba(124, 58, 237, 0.08);
   border-color: var(--secondary);
 }
-
+/*
 .theme-toggle {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -95,7 +96,7 @@
   transition: var(--transition);
   color: var(--text);
   line-height: 1;
-}
+} */
 
 /* ──────────────────────────────────────────────────────────────
    HERO
@@ -168,8 +169,10 @@
 }
 
 .products-filter__btn:hover {
+  color: #fff;
   border-color: var(--border-hover);
-  color: var(--secondary);
+  background: var(--gradient);
+  /* color: var(--secondary); */
 }
 
 .products-filter__btn--active {
